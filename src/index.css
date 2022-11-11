@@ -153,3 +153,11 @@ a, h1, h2, h3, h4, h5, h6, p {
   pointer-events:none;
 }
 /*  form-row Index Css Setting */
+
+
+/* Social Icon Css Setting */
+.icon-artstation, .icon-behance, .icon-cross, .icon-deviantart, .icon-discord, .icon-dribbble, .icon-facebook, .icon-google, .icon-instagram, .icon-patreon, .icon-twitch, .icon-twitter, .icon-youtube {
+  fill: #fff;
+  width: 12px;
+  height: 12px;
+}

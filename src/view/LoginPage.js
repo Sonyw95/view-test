@@ -3,6 +3,7 @@ import styled from "styled-components";
 import {Link} from "react-router-dom";
 import kakao from "../resources/image/logo/KakaoTalk_logo.png";
 
+
 const LoginFormBlock = styled.div`
     .box-title{
         font-size: 1.625rem;
@@ -69,11 +70,18 @@ const SocialBlock = styled.div`
         height: 40px;
         border-radius: 10px;
         transition: transform .2s ease-in-out;
+        margin-right:12px;
     }
     .div-kakao{
         width: 40px;
         border-radius:10px;
         background-color: orange;
+    }
+    .div-facebook{
+        background-color: #3763d2;
+    }
+    .div-youtube{
+        background-color: #fd434f;
     }
     .img-kakao{
         width:20px;
@@ -124,6 +132,24 @@ const LoginPage = () => {
                             <img className="img-kakao" src={kakao}/>
                         </div>
                     </Link>
+
+                    <Link to="/">
+                        <div className="social-link div-facebook" >
+                            <svg className="icon-facebook">
+                                <use href="#svg-facebook"></use>
+                            </svg>
+                        </div>
+                    </Link>
+
+                    <Link to="/">
+                        <div className="social-link div-youtube" >
+                            <svg className="icon-youtube">
+                                <use href="#svg-youtube"></use>
+                            </svg>
+                        </div>
+                    </Link>
+
+
                 </div>
             </SocialBlock>
 
