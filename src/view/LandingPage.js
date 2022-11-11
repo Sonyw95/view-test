@@ -20,7 +20,8 @@ const LandingPage = () => {
                     LABIT
                 </h1>
                 <p className="info-text">
-                    개인적으로 끄적이는 IT Tech Blog 입니다.
+                    개인적으로 끄적이는 IT Tech Blog 입니다.&amp;
+                    소셜계정으로 회원가입 및 로그인을 권장합니다!
                 </p>
 
                 {/* AuthForm 교체 버튼 */}

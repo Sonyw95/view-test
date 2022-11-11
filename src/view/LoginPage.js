@@ -1,6 +1,7 @@
 import ButtonM from "../component/common/ButtonM";
 import styled from "styled-components";
 import {Link} from "react-router-dom";
+import kakao from "../resources/image/logo/KakaoTalk_logo.png";
 
 const LoginFormBlock = styled.div`
     .box-title{
@@ -39,17 +40,45 @@ const SocialBlock = styled.div`
         position: relative;
         
         &:before{
-        left:0;
+            left:0;
+        }
+        &:after{
+            right:0;
         }
         &:after, &:before{
             content:"";
-            width: 5%;
+            width: 25%;
             height:1px;
             background-color: #eaeaf5;
             position: absolute;
             top:7px;
         }
     
+    }
+    .social-links{
+        margin-top:30px;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+    .social-link{
+        display:flex;
+        justify-content:center;
+        align-items: center;
+        width: 40px;
+        height: 40px;
+        border-radius: 10px;
+        transition: transform .2s ease-in-out;
+    }
+    .div-kakao{
+        width: 40px;
+        border-radius:10px;
+        background-color: orange;
+    }
+    .img-kakao{
+        width:20px;
+        display:block;
+        margin: 0 auto;
     }
     
     
@@ -89,6 +118,13 @@ const LoginPage = () => {
                 <p className="line-text">
                     소셜계정으로 로그인
                 </p>
+                <div className="social-links">
+                    <Link to="/">
+                        <div className="social-link div-kakao">
+                            <img className="img-kakao" src={kakao}/>
+                        </div>
+                    </Link>
+                </div>
             </SocialBlock>
 
         </LoginFormBlock>
