@@ -26,6 +26,7 @@ export const LandingDecoBlock = styled.div`
     right: -32%;
     pointer-event: none;
     background-color: white;
+    z-index: -2;
     
     @media screen and (max-width:1500px){
         display:none;
@@ -80,6 +81,11 @@ export const LandingInfoBlock = styled.div`
         text-align: center;
         font-family: Titillium Web, sans-serif;
     }
+    @media screen and ( max-width:500px) {
+        .info-title{
+            font-size:4.5rem;
+        }
+    }
     
     .info-text{
         width: 384px;
@@ -108,6 +114,14 @@ export const LandingTapblock = styled.div`
     @media screen and (max-width: 1500px){
         margin-top:40px;
     }
+    @media screen and (max-width: 500px){
+        width:90%;
+        margin: 20px auto 0;
+        
+        .switch-button{
+            width:50%;
+        }
+    }
     
     .switch-button{
         width:180px;
@@ -120,8 +134,13 @@ export const LandingTapblock = styled.div`
         text-align: center;
         cursor: pointer;
         transition: background-color 0.3x ease-in-out, color 0.3s ease-in-out;
-       
     }
+    @media screen and (max-width: 500px){
+        .switch-button{
+            width:50%;
+        }
+    }
+    
     .active{
         background-color: white;
         color: black;
@@ -143,4 +162,18 @@ export const AuthFormBlock = styled.div`
     position: absolute;
     top: 0;
     right: 13%;
+    
+     @media screen and (max-width:1500px){
+        right:80px;
+    }
+    
+    @media screen and (max-width: 1365px) {
+        width: 100%;
+        margin-top: 80px;
+        position: static;
+    }
+    @media screen and (max-width: 500px) {
+        margin-top:60px;
+    }
+    
 `;
