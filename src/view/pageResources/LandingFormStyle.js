@@ -124,6 +124,10 @@ export const SocialBlock = styled.div`
         border-radius: 10px;
         transition: transform .2s ease-in-out;
         margin-right:12px;
+        cursor: pointer;
+        &:hover{
+            transform: translateY(-4px);
+        }
     }
     .div-kakao{
         width: 40px;
