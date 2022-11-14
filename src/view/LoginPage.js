@@ -7,7 +7,7 @@ import { FormBoxBlock, SocialBlock, FormBlock } from "./pageResources/LandingFor
 const LoginPage = () => {
     return (
         <FormBlock>
-
+            {/* 폼 상단 애니메이션 */}
             <div className="spinner-box">
                 <div className="configure-border-1">
                     <div className="configure-core"></div>
@@ -17,11 +17,8 @@ const LoginPage = () => {
                 </div>
             </div>
 
-
+            {/* 폼 내용 */}
             <FormBoxBlock>
-
-
-
                 <h2 className="box-title">
                     계정 로그인
                 </h2>
@@ -75,8 +72,6 @@ const LoginPage = () => {
                                 </svg>
                             </div>
                         </Link>
-
-
                     </div>
                 </SocialBlock>
 
