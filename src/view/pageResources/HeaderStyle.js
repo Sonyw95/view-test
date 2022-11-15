@@ -24,7 +24,7 @@ export const HeaderActionBlock = styled.div`
 
     display: flex;
     align-items: center; 
-    
+       
     .logo{
         margin-left:26px;
         .logo-icon{
@@ -262,6 +262,9 @@ export const HeaderActionBlock = styled.div`
     }
     
     @media screen and (max-width: 680px){
+         &:last-child{
+            display:none;
+        }
         .logo{
             margin-left: 16px;
         }

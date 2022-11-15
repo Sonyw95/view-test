@@ -10,7 +10,7 @@ export const useSelectClose = (initState) => {
     }
     useEffect( () => {
         const onClick = (e) =>{
-
+            console.log(e.target);
             if(ref.current !== null && !ref.current.contains(e.target)){
                 setIsOpen(!isOpen);
             }

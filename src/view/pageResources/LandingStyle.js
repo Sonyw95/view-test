@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import Logo from '../../resources/image/logo/main_logo.png'
 
 export const LandingBlock = styled.div`
     width:100%;
@@ -50,16 +51,7 @@ export const LandingInfoBlock = styled.div`
         position: static;
     }
     
-    .logo{
-        display: -ms-flexbox;
-        display: flex;
-        -ms-flex-pack: center;
-        justify-content: center;
-        
-        .logo-icon{
-            width:4.5rem;
-        }
-    }
+    
     
     .pre-title{
         margin-top: 36px;
@@ -104,6 +96,16 @@ export const LandingInfoBlock = styled.div`
             display: none;
         }
     }
+`;
+
+export const LogoBlock = styled.div`
+    display: -ms-flexbox;
+    display: flex;
+    justify-content: center;    
+`;
+
+export const LandingLogo = styled.img.attrs({src:`${Logo}`})`
+    width:4.5rem;
 `;
 
 export const LandingTapblock = styled.div`
