@@ -27,7 +27,7 @@ const ModalWrap = styled.div`
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    transition: all 0.6s ease-in-out 0s;
+    transition: opacity 0.4s ease, transform 0.4s ease, visibility 0.4s;
     
     @media screen and (max-width: 500px){
         width: 90%;

@@ -327,7 +327,6 @@ export const SearchBarBlock =styled.div`
         margin-right:0;
         
         
-        
         .header-input-bar{
             height:100%;
             
