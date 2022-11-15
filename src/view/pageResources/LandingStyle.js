@@ -1,5 +1,4 @@
 import styled from "styled-components";
-import Logo from '../../resources/image/logo/main_logo.png'
 
 export const LandingBlock = styled.div`
     width:100%;
@@ -51,7 +50,16 @@ export const LandingInfoBlock = styled.div`
         position: static;
     }
     
-    
+    .logo{
+        display: -ms-flexbox;
+        display: flex;
+        -ms-flex-pack: center;
+        justify-content: center;
+        
+        .logo-icon{
+            width:4.5rem;
+        }
+    }
     
     .pre-title{
         margin-top: 36px;
@@ -98,16 +106,6 @@ export const LandingInfoBlock = styled.div`
     }
 `;
 
-export const LogoBlock = styled.div`
-    display: -ms-flexbox;
-    display: flex;
-    justify-content: center;    
-`;
-
-export const LandingLogo = styled.img.attrs({src:`${Logo}`})`
-    width:4.5rem;
-`;
-
 export const LandingTapblock = styled.div`
     margin-top: 90px;
     display: flex;
@@ -136,6 +134,7 @@ export const LandingTapblock = styled.div`
         text-align: center;
         cursor: pointer;
         transition: background-color 0.3x ease-in-out, color 0.3s ease-in-out;
+       
     }
     @media screen and (max-width: 500px){
         .switch-button{

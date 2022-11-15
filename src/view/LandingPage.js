@@ -5,11 +5,11 @@ import {
     LandingDecoBlock,
     LandingInfoBlock,
     AuthFormBlock,
-    LogoBlock, LandingLogo
 } from "./pageResources/LandingStyle";
 import React, {useReducer} from 'react';
 import LandingModal from "../component/common/LandingModal";
 import {Link} from "react-router-dom";
+import logo from "../resources/image/logo/main_logo.png";
 
 function reducer(state, action){
 
@@ -43,9 +43,9 @@ const LandingPage = () => {
             {/* 좌측 Landing Page 문구 */}
             <LandingInfoBlock>
                 <Link to="/">
-                    <LogoBlock>
-                            <LandingLogo/>
-                    </LogoBlock>
+                    <div className="logo">
+                        <img className="logo-icon" src={logo}/>
+                    </div>
 
                     <h2 className="pre-title">
                         WELCOME TO

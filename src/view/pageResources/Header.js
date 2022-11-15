@@ -5,10 +5,14 @@ import ProgressBar from "../../component/common/ProgressBar";
 import { useSelectClose } from "../../hooks/useSelectClose";
 import {Link} from "react-router-dom";
 import avatar from "../../resources/image/avatar/24.jpg"
+import {BsFillSunFill, BsMoon, BsMoonFill} from "react-icons/bs";
+import {WiMoonFull} from "react-icons/wi";
 
-const Header = () => {
+const Header = ({ isDark, toggleDarkMode}) => {
 
-    const [dropIsOpen, dropRef, dropHandler] = useSelectClose(false);
+    const [isNoticeOpen, noticeRef, noticeHandler] = useSelectClose(false);
+    const [isMessage, messageRef, messageHandler] = useSelectClose(false);
+
 
     return (
         <HeaderBlock>
@@ -71,15 +75,27 @@ const Header = () => {
             <HeaderActionBlock>
                 {/* 드롭박스 메뉴 모음 */}
                 <div className="dropdown-list">
-                    <div className="dropdown-list-item" onClick={dropHandler} ref={dropRef}>
+                    <div className="dropdown-list-item" onClick={noticeHandler} ref={noticeRef}>
                         <svg className="dropdown-list-icon icon-messages">
+                            <use href="#svg-notification"/>
+                        </svg>
+                    </div>
+
+                    <div className="dropdown-list-item" onClick={messageHandler} ref={messageRef}>
+                        <svg className="dropdown-list-icon icon-messages alert">
                             <use href="#svg-messages"/>
                         </svg>
                     </div>
+
+                    <div className="dropdown-list-item" onClick={() => toggleDarkMode()} >
+                            {isDark? <BsFillSunFill size="20" color={"#fff"}/> : <BsMoonFill size="18" color="black"/>  }
+                    </div>
+
                 </div>
 
+
                 {/* 드롭박스 팝업창 */}
-                <div className={"list-item first" + ( !dropIsOpen? '' : ' drop') }>
+                <div className={"list-item first" + ( !isNoticeOpen? '' : ' drop') }>
                     <div className={"dropdown-box-header"}>
                         <p className={"dropdown-box-header-title"}>알림창</p>
                         <p className={"dropdown-box-header-action"}>전부읽기</p>

@@ -7,7 +7,7 @@ export const HeaderBlock = styled.div`
     justify-content: space-between;
     width: 100%;
     height: 80px;
-    background-color: rgb(255,139,0);
+    background-color: ${(props) => props.theme.bgColor };
     position: fixed;
     top: 0;
     left: 0;
@@ -130,9 +130,9 @@ export const HeaderActionBlock = styled.div`
         }     
     }
     .next-progress-bar{
-        margin-left: -58%;
+        margin-left: -51%;
         margin-top: 7%;
-        width: 103px;
+        width: 106px;
         height: 4px;
         position: relative;
     }
@@ -151,10 +151,9 @@ export const HeaderActionBlock = styled.div`
             display: flex;
             height: 100%;
             padding: 0 14px;
-            cursor:pointer;      
+            cursor:pointer;     
         }
-  
-        
+
         
     }
     .dropdown-list:before {
@@ -292,7 +291,7 @@ export const SearchBarBlock =styled.div`
         input{
             border: none;
             color:white;
-            background-color: rgba(255,90,0, 0.5);
+            background-color: ${(props) => props.theme.inputColor};
             height: 100%;
             padding-right: 60px;
         }          
