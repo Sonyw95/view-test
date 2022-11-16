@@ -1,4 +1,4 @@
-import styled, {keyframes} from "styled-components";
+import styled from "styled-components";
 
 export const HeaderBlock = styled.div`
     display: flex;
@@ -8,6 +8,7 @@ export const HeaderBlock = styled.div`
     width: 100%;
     height: 80px;
     background-color: ${(props) => props.theme.bgColor };
+    transition: background-color 1s, color 0.1s, border 0.5s;
     position: fixed;
     top: 0;
     left: 0;
@@ -130,8 +131,6 @@ export const HeaderActionBlock = styled.div`
         }     
     }
     .next-progress-bar{
-        margin-left: -51%;
-        margin-top: 7%;
         width: 106px;
         height: 4px;
         position: relative;
@@ -153,8 +152,6 @@ export const HeaderActionBlock = styled.div`
             padding: 0 14px;
             cursor:pointer;     
         }
-
-        
     }
     .dropdown-list:before {
         top:24px;
@@ -241,6 +238,10 @@ export const HeaderActionBlock = styled.div`
         visibility:visible;
         transform: translateY(0);
     }
+    .header-login-button{
+        padding: 0 26px;
+        margin-right: 2.5rem;
+    }
     
     
     @media screen and (max-width: 1500px){
@@ -273,6 +274,9 @@ export const HeaderActionBlock = styled.div`
         .mobile-menu-trigger{
             display:flex;
         }
+        .dropdown-list{
+            display:none;
+        }
     }
 `;
 
@@ -292,6 +296,7 @@ export const SearchBarBlock =styled.div`
             border: none;
             color:white;
             background-color: ${(props) => props.theme.inputColor};
+            transition: background-color 1s, color 0.1s, border 0.5s;
             height: 100%;
             padding-right: 60px;
         }          

@@ -32,6 +32,79 @@ export const FormBlock = styled.div`
      &:first-child{
         margin-top: -313px;
     }
+    
+    @keyframes configure-clockwise {
+      0% {
+        transform: rotate(0);
+      }
+      25% {
+        transform: rotate(90deg);
+      }
+      50% {
+        transform: rotate(180deg);
+      }
+      75% {
+        transform: rotate(270deg);
+      }
+      100% {
+        transform: rotate(360deg);
+      }
+    }
+    
+    @keyframes configure-xclockwise {
+      0% {
+        transform: rotate(45deg);
+      }
+      25% {
+        transform: rotate(-45deg);
+      }
+      50% {
+        transform: rotate(-135deg);
+      }
+      75% {
+        transform: rotate(-225deg);
+      }
+      100% {
+        transform: rotate(-315deg);
+      }
+    }
+    
+    .configure-border-1 {
+      width: 80px;
+      height: 80px;
+      padding: 3px;
+      position: absolute;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background:white;
+      animation: configure-clockwise 3s ease-in-out 0s infinite alternate;
+    }
+    .configure-border-2 {
+      width: 80px;
+      height: 80px;
+      padding: 3px;
+      left: -115px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background: white;
+      transform: rotate(45deg);
+      animation: configure-xclockwise 3s ease-in-out 0s infinite alternate;
+    }
+    
+    .configure-core {
+      width: 100%;
+      height: 100%;
+      background-color: rgb(255,100,0);
+    }
+    
+    .spinner-box{
+        position: absolute;
+        top:-5%;
+        left: -5%;
+    }
+
     @media screen and (max-width: 1365px){
        &:first-child{
         margin-top: 0;
@@ -47,11 +120,7 @@ export const FormBlock = styled.div`
     @media screen and (max-width: 500px){
        padding: 40px 32px; 
     }   
-    .spinner-box{
-        position: absolute;
-        top:-5%;
-        left: -5%;
-    }
+    
 `;
 
 
@@ -101,7 +170,7 @@ export const SocialBlock = styled.div`
         }
         &:after, &:before{
             content:"";
-            width: 25%;
+            width: 20%;
             height:1px;
             background-color: #eaeaf5;
             position: absolute;

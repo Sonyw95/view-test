@@ -1,7 +1,7 @@
 import ButtonM from "../component/common/ButtonM";
 import {Link} from "react-router-dom";
 import kakao from "../resources/image/logo/KakaoTalk_logo.png";
-import { FormBoxBlock, SocialBlock, FormBlock } from "./pageResources/LandingFormStyle";
+import { FormBoxBlock, SocialBlock, FormBlock } from "./pageResources/Style/LandingFormStyle";
 
 
 const LoginPage = () => {

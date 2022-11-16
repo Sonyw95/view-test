@@ -2,7 +2,7 @@ import React from "react";
 import styled from "styled-components";
 import ButtonM from "./ButtonM";
 import kakao from "../../resources/image/logo/KakaoTalk_logo.png";
-import {SocialBlock} from "../../view/pageResources/LandingFormStyle";
+import {SocialBlock} from "../../view/pageResources/Style/LandingFormStyle";
 
 const Overlay = styled.div`
     position: fixed;

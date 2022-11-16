@@ -5,11 +5,12 @@ import {
     LandingDecoBlock,
     LandingInfoBlock,
     AuthFormBlock,
-} from "./pageResources/LandingStyle";
+} from "./pageResources/Style/LandingStyle";
 import React, {useReducer} from 'react';
 import LandingModal from "../component/common/LandingModal";
 import {Link} from "react-router-dom";
 import logo from "../resources/image/logo/main_logo.png";
+import darkLogo from "../resources/image/logo/main_logo-dark.png";
 
 function reducer(state, action){
 
@@ -25,7 +26,7 @@ function reducer(state, action){
     }
 }
 
-const LandingPage = () => {
+const LandingPage = ({isDark}) => {
 
     const [state, dispatch] = useReducer(reducer,{
         login: true,
@@ -44,7 +45,7 @@ const LandingPage = () => {
             <LandingInfoBlock>
                 <Link to="/">
                     <div className="logo">
-                        <img className="logo-icon" src={logo}/>
+                        <img className="logo-icon" src={isDark? darkLogo:logo}/>
                     </div>
 
                     <h2 className="pre-title">
@@ -61,10 +62,10 @@ const LandingPage = () => {
 
                 {/* AuthForm 교체 버튼 */}
                 <LandingTapblock>
-                    <p className={"switch-button " +  ( state.login? "active" : null) }  onClick={ () => dispatch({ type:'LOGIN' })} >
+                    <p className={"switch-button " +  ( state.login? "active" : "") }  onClick={ () => dispatch({ type:'LOGIN' })} >
                         로그인
                     </p>
-                    <p className={"switch-button " +  ( state.register? "active" : null) } onClick={ () => dispatch({ type:'REGISTER' })} >
+                    <p className={"switch-button " +  ( state.register? "active" : "") } onClick={ () => dispatch({ type:'REGISTER' })} >
                         가입
                     </p>
 

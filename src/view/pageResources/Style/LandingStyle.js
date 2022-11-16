@@ -3,7 +3,7 @@ import styled from "styled-components";
 export const LandingBlock = styled.div`
     width:100%;
     height:100%;
-    background-color:rgb(255,139,0);
+    background-color:${ (props) => props.theme.bgColor};
     background-size: cover;
     position: fixed;
     top: 0;
@@ -110,6 +110,10 @@ export const LandingTapblock = styled.div`
     margin-top: 90px;
     display: flex;
     justify-content: center;
+    
+    .switch-button:hover:not(.active) {
+        background-color:rgb(255,130,0);
+    }
     
     @media screen and (max-width: 1500px){
         margin-top:40px;

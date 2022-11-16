@@ -1,12 +1,13 @@
-import {HeaderBlock, HeaderActionBlock, SearchBarBlock} from "./HeaderStyle";
-import logo from "../../resources/image/logo/main_logo.png";
+import {HeaderBlock, HeaderActionBlock, SearchBarBlock} from "../Style/HeaderStyle";
+import logo from "../../../resources/image/logo/main_logo.png";
+import darkLogo from "../../../resources/image/logo/main_logo-dark.png";
 import React from "react";
-import ProgressBar from "../../component/common/ProgressBar";
-import { useSelectClose } from "../../hooks/useSelectClose";
+import ProgressBar from "../../../component/common/ProgressBar";
+import { useSelectClose } from "../../../hooks/useSelectClose";
 import {Link} from "react-router-dom";
-import avatar from "../../resources/image/avatar/24.jpg"
-import {BsFillSunFill, BsMoon, BsMoonFill} from "react-icons/bs";
-import {WiMoonFull} from "react-icons/wi";
+import avatar from "../../../resources/image/avatar/24.jpg"
+import {BsFillSunFill,  BsMoonFill} from "react-icons/bs";
+import ButtonM from "../../../component/common/ButtonM";
 
 const Header = ({ isDark, toggleDarkMode}) => {
 
@@ -19,7 +20,7 @@ const Header = ({ isDark, toggleDarkMode}) => {
             {/*  좌측 로고 및 타이틀 */}
             <HeaderActionBlock>
                 <div className="logo">
-                    <img className="logo-icon" src={logo} alt={"logo"}/>
+                    <img className="logo-icon" src={isDark?  darkLogo : logo} alt={"logo"}/>
                 </div>
 
                 <h1 className="header-brand-text">LABIT</h1>
@@ -64,10 +65,12 @@ const Header = ({ isDark, toggleDarkMode}) => {
                     <div className="bar-progress">
                         <p className="bar-progress-text">Next: <span/> <span> 30exp</span></p>
                     </div>
+                    <div className="next-progress-bar">
+                        <ProgressBar completed={"30"}/>
+                    </div>
+
                 </div>
-                <div className="next-progress-bar">
-                    <ProgressBar backcolor={"#fff"} completed={"30"}/>
-                </div>
+
             </HeaderActionBlock>
 
 
@@ -88,7 +91,7 @@ const Header = ({ isDark, toggleDarkMode}) => {
                     </div>
 
                     <div className="dropdown-list-item" onClick={() => toggleDarkMode()} >
-                            {isDark? <BsFillSunFill size="20" color={"#fff"}/> : <BsMoonFill size="18" color="black"/>  }
+                        {isDark? <BsFillSunFill size="20" color={"#fff"} className={"darkSwitch"}/> : <BsMoonFill size="18" color="black"/>  }
                     </div>
 
                 </div>
@@ -108,6 +111,25 @@ const Header = ({ isDark, toggleDarkMode}) => {
                         </div>
                     </div>
                 </div>
+
+                {/* 드롭박스 팝업창 */}
+                <div className={"list-item first" + ( !isMessage? '' : ' drop') }>
+                    <div className={"dropdown-box-header"}>
+                        <p className={"dropdown-box-header-title"}>메시지</p>
+                        <p className={"dropdown-box-header-action"}>전부읽기</p>
+                    </div>
+                    <div className={"dropdown-box-list"}>
+                        <div className={"dropdown-box-list-item"}>
+                            <div className={"list-item-notification"}>
+                                <Link to="/"><img className={"user-avatar"} src={avatar} alt={"avatar"}/></Link>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </HeaderActionBlock>
+
+            <HeaderActionBlock>
+                <Link to={"/landing"}><ButtonM className={"header-login-button"}>로그인</ButtonM></Link>
             </HeaderActionBlock>
 
         </HeaderBlock>
