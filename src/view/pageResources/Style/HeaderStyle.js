@@ -238,6 +238,9 @@ export const HeaderActionBlock = styled.div`
         visibility:visible;
         transform: translateY(0);
     }
+    .header-login-action{
+        margin-right: 26px;
+    }
     .header-login-button{
         padding: 0 26px;
         margin-right: 2.5rem;
@@ -257,6 +260,9 @@ export const HeaderActionBlock = styled.div`
     @media screen and (max-width: 960px){
         .next-progress, .next-progress-bar{
             display:none;
+        }
+        .dropdown-list{
+            margin-right: 26px;
         }
         
     }

@@ -129,7 +129,7 @@ const Header = ({ isDark, toggleDarkMode}) => {
             </HeaderActionBlock>
 
             <HeaderActionBlock>
-                <Link to={"/landing"}><ButtonM className={"header-login-button"}>로그인</ButtonM></Link>
+                <Link to={"/landing"} className={"header-login-action"}><ButtonM className="header-login-button">로그인</ButtonM></Link>
             </HeaderActionBlock>
 
         </HeaderBlock>
