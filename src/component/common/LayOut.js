@@ -1,12 +1,12 @@
 import Header from "../../view/pageResources/header/Header";
-import Footer from "../../view/pageResources/footer/Footer";
+import FooterNavi from "../../view/pageResources/footer/FooterNavi";
 
 const LayOut = ({isDark, toggleDarkMode}) => {
     return(
         <>
             <Header isDark={isDark} toggleDarkMode={toggleDarkMode}/>
 
-            <Footer />
+            <FooterNavi />
         </>
     )
 }

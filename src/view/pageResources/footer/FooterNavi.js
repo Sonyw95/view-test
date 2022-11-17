@@ -1,8 +1,8 @@
-import {FooterBlock, FooterProgressBlock} from "../Style/FooterStyle";
+import {FooterBlock, FooterProgressBlock} from "../Style/FooterNaviStyle";
 import React from "react";
 import ProgressBar from "../../../component/common/ProgressBar";
 
-const Footer = () => {
+const FooterNavi = () => {
 
     return(
         <FooterBlock>
@@ -41,4 +41,4 @@ const Footer = () => {
         </FooterBlock>
     )
 }
-export default Footer;
+export default FooterNavi;
