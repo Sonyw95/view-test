@@ -95,10 +95,11 @@ const Header = ({ isDark, toggleDarkMode}) => {
                     </div>
                 </div>
 
-
-
-
-
+                <div className="header-login-action settings" >
+                    <svg className="dropdown-list-icon icon-settings">
+                        <use href="#svg-settings"/>
+                    </svg>
+                </div>
 
                 {/* 드롭박스 팝업창 */}
                 <div className={"list-item first" + ( !isNoticeOpen? '' : ' drop') }>
@@ -132,14 +133,8 @@ const Header = ({ isDark, toggleDarkMode}) => {
             </HeaderActionBlock>
 
             <HeaderActionBlock>
-                <div className="header-login-action" >
-                    <svg className="dropdown-list-icon icon-settings">
-                        <use href="#svg-settings"/>
-                    </svg>
-                </div>
-
                 <Link to={"/landing"} className={"header-login-action"}><ButtonM className="header-login-button">로그인</ButtonM></Link>
-                </HeaderActionBlock>
+            </HeaderActionBlock>
 
         </HeaderBlock>
 

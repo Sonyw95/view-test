@@ -267,6 +267,7 @@ export const HeaderActionBlock = styled.div`
     }
     .header-login-action{
         margin-right: 26px;
+        margin-left:26px;
     }
     
     .header-login-button{
@@ -308,7 +309,7 @@ export const HeaderActionBlock = styled.div`
         .mobile-menu-trigger{
             display:flex;
         }
-        .dropdown-list{
+        .dropdown-list, .settings{
             display:none;
         }
     }
