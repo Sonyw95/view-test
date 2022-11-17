@@ -13,6 +13,7 @@ const Header = ({ isDark, toggleDarkMode}) => {
 
     const [isNoticeOpen, noticeRef, noticeHandler] = useSelectClose(false);
     const [isMessage, messageRef, messageHandler] = useSelectClose(false);
+    const [isSettings, settingRef, settingHandler] = useSelectClose(false);
 
 
     return (
@@ -78,12 +79,42 @@ const Header = ({ isDark, toggleDarkMode}) => {
                         <svg className="dropdown-list-icon icon-notification">
                             <use href="#svg-notification"/>
                         </svg>
+
+                        {/* 드롭박스 팝업창 */}
+                        <div className={"list-item first" + ( !isNoticeOpen? '' : ' drop') }>
+                            <div className={"dropdown-box-header"}>
+                                <p className={"dropdown-box-header-title"}>알림창</p>
+                                <p className={"dropdown-box-header-action"}>전부읽기</p>
+                            </div>
+                            <div className={"dropdown-box-list"}>
+                                <div className={"dropdown-box-list-item"}>
+                                    <div className={"list-item-notification"}>
+                                        <Link to="/"><img className={"user-avatar"} src={avatar} alt={"avatar"}/></Link>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
                     </div>
+
 
                     <div className="dropdown-list-item alert" onClick={messageHandler} ref={messageRef}>
                         <svg className="dropdown-list-icon icon-messages ">
                             <use href="#svg-messages"/>
                         </svg>
+                        {/* 드롭박스 팝업창 */}
+                        <div className={"list-item" + ( !isMessage? '' : ' drop') }>
+                            <div className={"dropdown-box-header"}>
+                                <p className={"dropdown-box-header-title"}>메시지</p>
+                                <p className={"dropdown-box-header-action"}>전부읽기</p>
+                            </div>
+                            <div className={"dropdown-box-list"}>
+                                <div className={"dropdown-box-list-item"}>
+                                    <div className={"list-item-notification"}>
+                                        <Link to="/"><img className={"user-avatar"} src={avatar} alt={"avatar"}/></Link>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
                     </div>
 
                     <div className="dropdown-list-item" onClick={() => toggleDarkMode()} >
@@ -91,41 +122,20 @@ const Header = ({ isDark, toggleDarkMode}) => {
                     </div>
                 </div>
 
-                <div className="header-login-action settings" >
-                    <svg className="dropdown-list-icon icon-settings">
-                        <use href="#svg-settings"/>
-                    </svg>
-                </div>
-
-                {/* 드롭박스 팝업창 */}
-                <div className={"list-item first" + ( !isNoticeOpen? '' : ' drop') }>
-                    <div className={"dropdown-box-header"}>
-                        <p className={"dropdown-box-header-title"}>알림창</p>
-                        <p className={"dropdown-box-header-action"}>전부읽기</p>
-                    </div>
-                    <div className={"dropdown-box-list"}>
-                        <div className={"dropdown-box-list-item"}>
-                            <div className={"list-item-notification"}>
-                                <Link to="/"><img className={"user-avatar"} src={avatar} alt={"avatar"}/></Link>
+                <div className="dropdown-list-setting" >
+                    <div className="header-settings-action" onClick={settingHandler} ref={settingRef}>
+                        <svg className="dropdown-list-icon icon-settings">
+                            <use href="#svg-settings"/>
+                        </svg>
+                        <div className={"list-item-setting" + ( !isSettings? '' : ' drop') }>
+                            <div className={"user-status"}>
+                                <Link to={"/"}><img className={"user-avatar"} src={avatar} alt={"avatar"}/></Link>
                             </div>
                         </div>
                     </div>
+
                 </div>
 
-                {/* 드롭박스 팝업창 */}
-                <div className={"list-item first" + ( !isMessage? '' : ' drop') }>
-                    <div className={"dropdown-box-header"}>
-                        <p className={"dropdown-box-header-title"}>메시지</p>
-                        <p className={"dropdown-box-header-action"}>전부읽기</p>
-                    </div>
-                    <div className={"dropdown-box-list"}>
-                        <div className={"dropdown-box-list-item"}>
-                            <div className={"list-item-notification"}>
-                                <Link to="/"><img className={"user-avatar"} src={avatar} alt={"avatar"}/></Link>
-                            </div>
-                        </div>
-                    </div>
-                </div>
             </HeaderActionBlock>
 
             <HeaderActionBlock>

@@ -120,7 +120,7 @@ a, h1, h2, h3, h4, h5, h6, p {
   line-height:1em;
 }
 
-.icon-grid, .icon-join-group, .icon-leave-group, .icon-login, .icon-magnifying-glass, .icon-messages, .icon-notification, .icon-plus, .icon-shopping-bag, .icon-settings, .icon-messages {
+.icon-grid, .icon-join-group, .icon-leave-group, .icon-login, .icon-magnifying-glass, .icon-messages, .icon-notification, .icon-plus, .icon-shopping-bag, .icon-settings, .icon-messages, .icon-settings, .icon-messages, icon-notification {
   fill: #f0f0f0;
   width: 20px;
   height: 20px;
@@ -145,6 +145,9 @@ svg {
 
 .form-row, .table, .figure, h1, h2, h3, h4, h5, h6, ol, p, ul{
   margin: 0;
+}
+.menu .menu-item.active .menu-item-link .menu-item-link-icon, .menu .menu-item.active .menu-item-link:hover .menu-item-link-icon {
+  fill: #fff;
 }
 
 .form-row{

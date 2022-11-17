@@ -1,11 +1,14 @@
 import Header from "../../view/pageResources/header/Header";
 import FooterNavi from "../../view/pageResources/footer/FooterNavi";
+import { Outlet } from "react-router-dom";
+import LeftSideBar from "../../view/pageResources/LeftSideBar";
 
 const LayOut = ({isDark, toggleDarkMode}) => {
     return(
         <>
             <Header isDark={isDark} toggleDarkMode={toggleDarkMode}/>
-
+            <LeftSideBar/>
+            <Outlet/>
             <FooterNavi />
         </>
     )

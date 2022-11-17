@@ -25,6 +25,12 @@ export const HeaderActionBlock = styled.div`
 
     display: flex;
     align-items: center; 
+    
+    .list-item-box{
+        &:nth-child(1){
+            left:46%;
+        }
+    }
        
     .active{
         fill :#fff;
@@ -163,7 +169,6 @@ export const HeaderActionBlock = styled.div`
                 display: flex;
                 padding: 0 18px;
                 position: relative;
-}
             }
         }
     }
@@ -234,23 +239,22 @@ export const HeaderActionBlock = styled.div`
                     min-height: 44px;
                     padding: 2px 60px 0 52px;
                     position: relative;
-                    
-                    .user-avatar{
-                        position: absolute;
-                        top:0;
-                        left:0;
-                        width: 40px;
-                        height:44px;
-                        
-                    }
                 }
             }
         }
     }
+    .user-avatar{
+        position: absolute;
+        top:0;
+        left:0;
+        width: 30px;
+        height:32px;
+                        
+    }
     .drop{
-        opacity: 1;
-        visibility:visible;
-        transform: translateY(0);
+        opacity: 1 !important;
+        visibility:visible !important;
+        transform: translateY(0) !important;
     }
     .alert svg{
         fill: #fff;
@@ -265,14 +269,54 @@ export const HeaderActionBlock = styled.div`
         top: 30%;
         right: 15%;
     }
-    .header-login-action{
-        margin-right: 26px;
-        margin-left:26px;
-    }
     
-    .header-login-button{
-        padding: 0 26px;
-        margin-right: 2.5rem;
+    
+    .dropdown-list-setting{
+        height: 80px;
+        
+        .header-settings-action{
+            margin-right:26px;
+            width: 100%;
+            cursor: pointer;
+            position: relative;
+            align-items: center;
+            display: flex;
+            height: 100%;
+            padding: 0 14px;
+            cursor: pointer;
+            transition: transform .2s ease-in-out;
+            
+            .list-item-setting{
+                width: 220px;
+                padding: 20px 28px;
+                border-radius: 10px;
+                background-color: #fff;
+                box-shadow: 3px 5px 40px 0 rgb(94 92 154 / 6%);
+                
+                position: absolute;
+                z-index: 9999;
+                top: 64px;
+                right: 22px;
+                opacity: 0;
+                visibility: hidden;
+                transform: translate(0px, 0px);
+                transition: transform 0.4s ease-in-out 0s, opacity 0.4s ease-in-out 0s, visibility 0.4s ease-in-out 0s;
+                
+                .user-status{
+                    min-height:44px;
+                    padding: 2px 0 0 52px;
+                    position: relative;
+                }
+                
+            }
+        }
+    }
+    .header-login-action{
+        margin-right: 2rem;
+        .header-login-button{
+            padding: 0 26px;
+            margin-right: 2.5rem;
+        }
     }
     
     
@@ -309,7 +353,7 @@ export const HeaderActionBlock = styled.div`
         .mobile-menu-trigger{
             display:flex;
         }
-        .dropdown-list, .settings{
+        .dropdown-list, .dropdown-list-setting{
             display:none;
         }
     }
