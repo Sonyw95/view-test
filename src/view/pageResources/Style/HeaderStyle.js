@@ -26,6 +26,12 @@ export const HeaderActionBlock = styled.div`
     display: flex;
     align-items: center; 
        
+    .active{
+        fill :#fff;
+    }   
+    svg:hover{
+         transform: translateY(-4px);
+    }
     .logo{
         margin-left:26px;
         .logo-icon{
@@ -54,7 +60,6 @@ export const HeaderActionBlock = styled.div`
     .icon-grid{
         pointer-events: none;
         transition: fill .3s ease-in-out;
-        fill: white;
     }
     
     
@@ -150,7 +155,16 @@ export const HeaderActionBlock = styled.div`
             display: flex;
             height: 100%;
             padding: 0 14px;
-            cursor:pointer;     
+            cursor:pointer; 
+            transition: transform .2s ease-in-out;
+            
+            .settings{
+                height: 80px;
+                display: flex;
+                padding: 0 18px;
+                position: relative;
+}
+            }
         }
     }
     .dropdown-list:before {
@@ -238,9 +252,23 @@ export const HeaderActionBlock = styled.div`
         visibility:visible;
         transform: translateY(0);
     }
+    .alert svg{
+        fill: #fff;
+    }
+    .alert:after{
+        content: "";
+        width: 4px;
+        height: 4px;
+        border-radius: 50%;
+        background-color: #41efff;
+        position: absolute;
+        top: 30%;
+        right: 15%;
+    }
     .header-login-action{
         margin-right: 26px;
     }
+    
     .header-login-button{
         padding: 0 26px;
         margin-right: 2.5rem;

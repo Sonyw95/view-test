@@ -79,22 +79,25 @@ const Header = ({ isDark, toggleDarkMode}) => {
                 {/* 드롭박스 메뉴 모음 */}
                 <div className="dropdown-list">
                     <div className="dropdown-list-item" onClick={noticeHandler} ref={noticeRef}>
-                        <svg className="dropdown-list-icon icon-messages">
+                        <svg className="dropdown-list-icon icon-notification">
                             <use href="#svg-notification"/>
                         </svg>
                     </div>
 
-                    <div className="dropdown-list-item" onClick={messageHandler} ref={messageRef}>
-                        <svg className="dropdown-list-icon icon-messages alert">
+                    <div className="dropdown-list-item alert" onClick={messageHandler} ref={messageRef}>
+                        <svg className="dropdown-list-icon icon-messages ">
                             <use href="#svg-messages"/>
                         </svg>
                     </div>
 
                     <div className="dropdown-list-item" onClick={() => toggleDarkMode()} >
-                        {isDark? <BsFillSunFill size="20" color={"#fff"} className={"darkSwitch"}/> : <BsMoonFill size="18" color="black"/>  }
+                        {isDark? <BsFillSunFill size="20" color={"#fff"} className={"darkSwitch"}/> : <BsMoonFill size="20" color="black"/>  }
                     </div>
-
                 </div>
+
+
+
+
 
 
                 {/* 드롭박스 팝업창 */}
@@ -129,8 +132,14 @@ const Header = ({ isDark, toggleDarkMode}) => {
             </HeaderActionBlock>
 
             <HeaderActionBlock>
+                <div className="header-login-action" >
+                    <svg className="dropdown-list-icon icon-settings">
+                        <use href="#svg-settings"/>
+                    </svg>
+                </div>
+
                 <Link to={"/landing"} className={"header-login-action"}><ButtonM className="header-login-button">로그인</ButtonM></Link>
-            </HeaderActionBlock>
+                </HeaderActionBlock>
 
         </HeaderBlock>
 
