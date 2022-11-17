@@ -24,11 +24,7 @@ const Header = ({ isDark, toggleDarkMode}) => {
                 </div>
 
                 <h1 className="header-brand-text">LABIT</h1>
-            </HeaderActionBlock>
 
-
-            {/* 좌측 메뉴 슬라이드 트리거 */}
-            <HeaderActionBlock>
                 {/* PC 슬라이드 메뉴 트리거 */}
                 <div className="side-menu-trigger">
                     <svg className="icon-grid">
@@ -43,8 +39,8 @@ const Header = ({ isDark, toggleDarkMode}) => {
                         <div className="burger-icon-bar"/>
                     </div>
                 </div>
-            </HeaderActionBlock>
 
+            </HeaderActionBlock>
 
             {/* 중앙 검색 바*/}
             <SearchBarBlock>
