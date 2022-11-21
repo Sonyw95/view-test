@@ -30,17 +30,17 @@ function App() {
     };
 
 
-  return (
-      <ThemeProvider theme={isDark ? darkColor : lightColor } >
-          <GlobalStyle/>
-          <Routes>
-              <Route element={<LayOut isDark={isDark} toggleDarkMode={toggleDarkMode}/>}>
-                  <Route path="/" element={<NewsPeedPage/>}/>
-              </Route>
-              <Route path="/landing" element={<LandingPage isDark={isDark}/>}/>
-          </Routes>
-      </ThemeProvider>
-  );
+    return (
+        <ThemeProvider theme={isDark ? darkColor : lightColor } >
+            <GlobalStyle/>
+            <Routes>
+                <Route element={<LayOut isDark={isDark} toggleDarkMode={toggleDarkMode}/>}>
+                    <Route path="/" element={<NewsPeedPage/>}/>
+                </Route>
+                <Route path="/landing" element={<LandingPage isDark={isDark}/>}/>
+            </Routes>
+        </ThemeProvider>
+    );
 
 }
 

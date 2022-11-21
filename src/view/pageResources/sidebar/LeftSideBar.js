@@ -1,6 +1,5 @@
-import {LeftSideBarBlock} from "./Style/SideBarStyle";
+import {LeftSideBarBlock} from "../Style/SideBarStyle";
 import {Link} from "react-router-dom";
-import avatar from "../../resources/image/avatar/24.jpg";
 
 const LeftSideBar = () =>{
 

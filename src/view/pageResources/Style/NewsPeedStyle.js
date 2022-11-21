@@ -1,8 +1,6 @@
 import styled from "styled-components";
 
 export const ContentBlock = styled.div`
-    transform: translate(162.px, 0px);
-    transition: transform 0.4s ease-in-out 0s;
     
     max-width: 1184px;
     padding: 112px 0 100px;

@@ -90,6 +90,11 @@ const Header = ({ isDark, toggleDarkMode}) => {
                                 <div className={"dropdown-box-list-item"}>
                                     <div className={"list-item-notification"}>
                                         <Link to="/"><img className={"user-avatar"} src={avatar} alt={"avatar"}/></Link>
+                                        <div className={"user-avatar-level"}>
+                                            <div className={"user-avatar-border"}>
+                                               <span className={"user-level-info"}>4</span>
+                                            </div>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
@@ -111,6 +116,11 @@ const Header = ({ isDark, toggleDarkMode}) => {
                                 <div className={"dropdown-box-list-item"}>
                                     <div className={"list-item-notification"}>
                                         <Link to="/"><img className={"user-avatar"} src={avatar} alt={"avatar"}/></Link>
+                                        <div className={"user-avatar-level"}>
+                                            <div className={"user-avatar-border"}>
+                                                <span className={"user-level-info"}>4</span>
+                                            </div>
+                                        </div>
                                     </div>
                                 </div>
                             </div>

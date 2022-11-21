@@ -240,6 +240,33 @@ export const HeaderActionBlock = styled.div`
                     padding: 2px 60px 0 52px;
                     position: relative;
                 }
+                .user-avatar-level{
+                    width: 18px;
+                    height: 20px;
+                    top: 60%;
+                    left: 8%;
+
+                    
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    position: absolute;
+                    border-radius:20px;
+                    border: 2px solid white;
+                    background-color:rgb(255,130,0);
+                    z-index: 4;
+                    
+                    .user-avatar-border{
+                        text-align:center;
+                        color:white;
+                        font-size:1rem;
+                        z-index: 4;
+                        .user-level-info{
+                            font-size:0.6rem;
+                            background-color:rgb(255,130,0);
+                        }
+                    }
+                }
             }
         }
     }
@@ -247,8 +274,9 @@ export const HeaderActionBlock = styled.div`
         position: absolute;
         top:0;
         left:0;
-        width: 30px;
-        height:32px;
+        width: 40px;
+        height:44px;
+        border-radius: 20px;
                         
     }
     .drop{
