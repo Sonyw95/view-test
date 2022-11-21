@@ -9,6 +9,7 @@ export const FooterBlock = styled.div`
     width: 100%;
     height: 60px;
     background-color: ${(props) => props.theme.bgColor};
+    transition: background-color 1s, color 0.1s, border 0.5s;
     position: fixed;
     bottom: 0;
     left: 0;

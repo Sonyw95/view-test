@@ -3,20 +3,23 @@ import styled from "styled-components";
 
 export const LeftSideBarBlock = styled.div`
     transition-delay: .25s;
-    padding-top: 20px;
+    transition: transform .35s ease-in-out
     overflow-y: visible;
     
+    width:80px;
+    height: 100%;
+    padding-top:30px;
+    padding-bottom: 40px;
     margin-top: 80px;
-    transition: transform .35s ease-in-out
+    
+    position: fixed;
     top:0;
     left:0;
-    
-    height: 100%;
-    position: fixed;
     z-index:9999;
     
-    width:80px;
-    padding-top:20px;
+    background-color: ${ (props) => props.theme.leftBarColor};
+    transition: background-color 1s, color 0.1s, border 0.5s;
+    box-shadow: 0 0 40px 0 rgba(94,92,154, .06);
     
     .user-avatar{
         margin: 0 auto;
@@ -24,22 +27,38 @@ export const LeftSideBarBlock = styled.div`
         height: 44px;
         display:block;
         position: relative;
-        
     }
+    
+    .icon-newsfeed, .icon-blog-posts, .icon-forums {
+      fill:#adafca;
+    }
+ 
     .menu{
         .menu-item {
             padding: 0 16px;
             margin-bottom: 10px;
-            
-            .active{
+      
+        }
+        .menu-item.active > .menu-item-link{
                 color:white;
                 background-color:rgb(255,130,0);
                 box-shadow: 4px 7px 12px 0 rgb(255, 130, 0 / 20%);
-            }
+        }
+        
+        .menu-item:hover:not(.active) > .menu-item-link {
+            ${ (props) => props.theme.leftLink}
         }
         
         .menu-item-link{
+            display: flex;
+            align-items: center;
+            height: 48px;
+            border-radius: 12px;
+            font-size: 0.875rem;
+            font-weight: 700;
+            line-height: 1.2857142857em;
             position: relative;
+            transition: all .2s ease-in-out;
         }
     }
     
