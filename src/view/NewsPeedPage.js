@@ -1,5 +1,7 @@
 import {ContentBlock, SectionBannerBlock} from "./pageResources/Style/NewsPeedStyle";
 import {useEffect, useRef, useState} from "react";
+import newsPeedBanner from "../resources/image/banner/newsfeed-icon.png";
+
 
 const NewsPeedPage = ({isNormalSide}) => {
 
@@ -29,9 +31,11 @@ const NewsPeedPage = ({isNormalSide}) => {
     });
 
     return(
-        <ContentBlock style={style} >
-            <SectionBannerBlock ref={ref}>
-
+        <ContentBlock style={style} ref={ref} >
+            <SectionBannerBlock >
+                <img className={"section-banner-icon"} src={newsPeedBanner}/>
+                <p className="section-banner-title">Newsfeed</p>
+                <p className="section-banner-text">Check what your friends have been up to!</p>
             </SectionBannerBlock>
 
         </ContentBlock>

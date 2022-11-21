@@ -26,4 +26,24 @@ export const SectionBannerBlock = styled.div`
     padding: 52px 60px 0 200px;
     border-radius: 12px;
     position: relative;
+    
+    background: ${(props) => props.theme.bgColor};
+    transition: background-color 1s, color 0.1s, border 0.5s;
+    
+    .section-banner-icon{
+        position: absolute;
+        bottom: 0;
+        left: 0;
+    }
+    .section-banner-title{
+        font-size: 2.25rem;
+        font-weight: 700;
+        color:#fff;
+    }
+    .section-banner-text{
+        margin-top: 10px;
+        font-size: 1rem;
+        font-weight: 500;
+        color:white;
+    }
 `;
