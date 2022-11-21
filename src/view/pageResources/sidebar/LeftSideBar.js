@@ -12,6 +12,9 @@ const LeftSideBar = () =>{
                         <svg className="menu-item-link-icon icon-newsfeed ">
                             <use href="#svg-newsfeed"/>
                         </svg>
+                        <div className={"menu-tooltip"}>
+                            <p className="menu-tooltip-text">Newsfeed</p>
+                        </div>
                     </Link>
                 </li>
 
@@ -20,6 +23,9 @@ const LeftSideBar = () =>{
                         <svg className="menu-item-link-icon icon-blog-posts ">
                             <use href="#svg-blog-posts"/>
                         </svg>
+                        <div className={"menu-tooltip"}>
+                            <p className="menu-tooltip-text">BLOG</p>
+                        </div>
                     </Link>
                 </li>
 
@@ -28,6 +34,9 @@ const LeftSideBar = () =>{
                         <svg className="menu-item-link-icon icon-forums ">
                             <use href="#svg-forums"/>
                         </svg>
+                        <div className={"menu-tooltip"}>
+                            <p className="menu-tooltip-text">FORUM</p>
+                        </div>
                     </Link>
                 </li>
 

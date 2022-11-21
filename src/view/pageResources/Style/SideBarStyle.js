@@ -45,8 +45,13 @@ export const LeftSideBarBlock = styled.div`
                 box-shadow: 4px 7px 12px 0 rgb(255, 130, 0 / 20%);
         }
         
-        .menu-item:hover:not(.active) > .menu-item-link {
+        .menu-item:hover:not(.active) > .menu-item-link   {
             ${ (props) => props.theme.leftLink}
+            
+            .menu-tooltip{
+                opacity: 1;
+                visibility: visible;
+            }
         }
         
         .menu-item-link{
@@ -59,8 +64,35 @@ export const LeftSideBarBlock = styled.div`
             line-height: 1.2857142857em;
             position: relative;
             transition: all .2s ease-in-out;
+            
+            .menu-tooltip{
+                white-space: nowrap;
+                position: absolute;
+                z-index: 99999;
+                right: -77px;
+                top: 50%;
+                margin-top: -12px;
+                opacity: 0;
+                visibility: hidden;
+                transform: translate(10px, 0px);
+                transition: all 0.3s ease-in-out 0s;
+                
+                .menu-tooltip-text{
+                    padding: 0 12px;
+                    border-radius: 200px;
+                    background-color: rgb(255,130,0);
+                    color: #fff;
+                    font-size: 0.25rem;
+                    font-weight: 700;
+                    line-height: 24px;
+                }
+            }
         }
     }
     
+    
+    @media screen and (max-width:1365px){
+        display:none;
+    }
     
 `;

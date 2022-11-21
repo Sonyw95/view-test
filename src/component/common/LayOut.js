@@ -3,7 +3,7 @@ import FooterNavi from "../../view/pageResources/footer/FooterNavi";
 import { Outlet } from "react-router-dom";
 import LeftSideBar from "../../view/pageResources/sidebar/LeftSideBar";
 
-const LayOut = ({isDark, toggleDarkMode}) => {
+const LayOut = ({isDark, toggleDarkMode, isNormalSide, toggleSide}) => {
 
 
 

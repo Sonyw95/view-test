@@ -25,17 +25,23 @@ function App() {
 
     const [isDark, setIsDark] = useState(false);
 
+    const [isNormalSide, setIsNormalSide] = useState(true);
+
     const toggleDarkMode = () => {
         setIsDark( (prev) => !prev);
     };
+
+    const toggleSide = () => {
+        setIsNormalSide( (prev) => !prev);
+    }
 
 
     return (
         <ThemeProvider theme={isDark ? darkColor : lightColor } >
             <GlobalStyle/>
             <Routes>
-                <Route element={<LayOut isDark={isDark} toggleDarkMode={toggleDarkMode}/>}>
-                    <Route path="/" element={<NewsPeedPage/>}/>
+                <Route element={<LayOut isDark={isDark} toggleDarkMode={toggleDarkMode} isNormalSide={isNormalSide} toggleSide={toggleSide}/>}>
+                    <Route path="/" element={<NewsPeedPage isNormalSide={isNormalSide} />}/>
                 </Route>
                 <Route path="/landing" element={<LandingPage isDark={isDark}/>}/>
             </Routes>
