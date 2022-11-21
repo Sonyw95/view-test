@@ -3,6 +3,7 @@ import {useEffect, useRef, useState} from "react";
 import newsPeedBanner from "../resources/image/banner/newsfeed-icon.png";
 import qs from "../resources/image/quest/openq-s.png";
 import ProgressBar from "../component/common/ProgressBar";
+import ButtonM from "../component/common/ButtonM";
 
 
 const NewsPeedPage = ({isNormalSide}) => {
@@ -76,6 +77,51 @@ const NewsPeedPage = ({isNormalSide}) => {
                             </div>
                         </div>
                         <a className="widget-box-button button small white" href="quests.html">See all Quests!</a>
+                    </div>
+                </div>
+
+                <div className={"grid-column"}>
+                    <div className={"quick-post"}>
+                        <div className={"quick-post-header"}>
+                            <div className={"option-item"}/>
+                            <div className={"option-item  active"}>
+                                <svg className="icon-status">
+                                    <use href="#svg-status"/>
+                                </svg>
+                                <p className="option-item-title">상태 메시지</p>
+                            </div>
+                            <div className={"option-item"}/>
+                        </div>
+
+                        <div className={"quick-post-body"}>
+                            <form className={"form"}>
+                                <div className={"form-textarea"}>
+                                    <textarea id={"quick-textarea"} name={"quick-textarea"} className={"textarea"} placeholder={"안녕하세요. 오늘나의 상태메시지 입니다."}/>
+                                    <p className="form-textarea-limit-text">998/1000</p>
+                                </div>
+                            </form>
+                            <div className={"quick-post-footer"}>
+                                <div className={"quick-post-footer-action"}>
+                                    <div className={"quick-post-action-medium"}>
+                                        <svg className="quick-post-action-icon icon-camera">
+                                            <use href="#svg-camera"/>
+                                        </svg>
+                                    </div>
+                                    <div className={"quick-post-action-medium"}>
+                                        <svg className="quick-post-action-icon icon-insert-tag">
+                                            <use href="#svg-tags"/>
+                                        </svg>
+                                    </div>
+                                </div>
+                                <div className={"quick-post-footer-action"}>
+                                    <ButtonM className={"quick-post-button"}>작성</ButtonM>
+                                </div>
+                            </div>
+
+
+                        </div>
+
+
                     </div>
                 </div>
             </ContentGrid>

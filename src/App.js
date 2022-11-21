@@ -1,6 +1,5 @@
 import { Route, Routes } from 'react-router-dom';
 import LandingPage from "./view/LandingPage";
-import Header from "./view/pageResources/header/Header";
 import NewsPeedPage from "./view/NewsPeedPage";
 import {createGlobalStyle, ThemeProvider} from "styled-components";
 import {useState} from "react";
@@ -19,7 +18,7 @@ function App() {
         inputColor: "rgba(30,30,30,0.6)",  headPgColor: "rgb(255,130,0)",leftLink:"background-color:#293249;box-shadow: 3px 5px 20px 0 rgb(0 0 0 / 12%);"
     };
     const lightColor = {
-        globalColor: "#fff" ,bgColor: 'rgb(255,130,0)',leftBarColor:"#fff",
+        globalColor: "#f8f8fb" ,bgColor: 'rgb(255,130,0)',leftBarColor:"#fff",
         inputColor: "rgba(255,90,0,0.5)", headPgColor :"red",leftLink:"background-color:#fff;box-shadow: 3px 5px 20px 0 rgba(94,92,154, .12);"
     }
 
