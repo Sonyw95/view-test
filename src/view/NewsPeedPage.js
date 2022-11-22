@@ -8,6 +8,7 @@ import newsPeedBanner from "../resources/image/banner/newsfeed-icon.png";
 import qs from "../resources/image/quest/openq-s.png";
 
 import moment from "momnet";
+import {Link} from "react-router-dom";
 
 
 const NewsPeedPage = ({isNormalSide}) => {
@@ -117,7 +118,7 @@ const NewsPeedPage = ({isNormalSide}) => {
                                 </div>
                             </div>
                         </div>
-                        <a className="widget-box-button button small white" href="quests.html">See all Quests!</a>
+                        <Link to="/" className="widget-box-button button small white">See all Quests!</Link>
                     </div>
                 </div>
 
