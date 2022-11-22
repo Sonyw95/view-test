@@ -7,16 +7,22 @@ import ButtonM from "../component/common/ButtonM";
 import newsPeedBanner from "../resources/image/banner/newsfeed-icon.png";
 import qs from "../resources/image/quest/openq-s.png";
 
+import moment from "momnet";
 
 const NewsPeedPage = ({isNormalSide}) => {
 
     const [resizeWidth, setResizeWidth] = useState('274');
     const dates = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
+    const [yearMonth, setYearMonth] = useState( moment().format("YYYY.MM") );
     const ref = useRef(null);
 
     const style ={
         transform: `translate(${resizeWidth}px, 0px)`,
         transition: "transform 0.4s ease-in-out 0s",
+    }
+
+    const handleYearButton = () => {
+        setYearMonth(moment(-1).format("YYYY.MM"))
     }
 
     const handleResize = (contentGrid) => {
@@ -34,11 +40,10 @@ const NewsPeedPage = ({isNormalSide}) => {
 
     useEffect( () => {
         window.addEventListener('resize', handleResize);
-
-        return() => {
+        return () => {
             window.removeEventListener('resize', handleResize);
         }
-    },[]);
+    });
 
     return(
         <ContentBlock style={style} ref={ref} >
@@ -138,16 +143,18 @@ const NewsPeedPage = ({isNormalSide}) => {
                                 <use href="#svg-small-arrow"/>
                             </svg>
                         </div>
-                        <p className="widget-box-title">2022.11</p>
+                        <p className="widget-box-title">{yearMonth}</p>
                         <div className={"widget-box-content"}>
                             <div className={"calendar"}>
                                 <div className={"calendar-week"}>
 
                                     {dates.map ( (day, idx)=>{
                                         return(
-                                            <p className={"calendar-week-day"}>{day}</p>
+                                            <p className={"calendar-week-day"} key={idx}>{day}</p>
                                         )
                                     })}
+                                </div>
+                                <div className={"calendar-days"}>
 
                                 </div>
                             </div>

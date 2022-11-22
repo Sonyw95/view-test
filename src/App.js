@@ -5,14 +5,16 @@ import {createGlobalStyle, ThemeProvider} from "styled-components";
 import {useState} from "react";
 import LayOut from "./component/common/LayOut";
 
-function App() {
-
-    const GlobalStyle = createGlobalStyle`
+const GlobalStyle = createGlobalStyle`
         html{
             background-color: ${(props) => props.theme.globalColor };
             transition: background-color 1s, color 0.1s, border 0.5s;
         }
     `;
+
+function App() {
+
+
     const darkColor ={
         globalColor: '#161b28', bgColor:"rgba(60,60,60,0.6)",leftBarColor:"rgba(40,40,40,0.6)",
         inputColor: "rgba(30,30,30,0.6)",  headPgColor: "rgb(255,130,0)",leftLink:"background-color:#293249;box-shadow: 3px 5px 20px 0 rgb(0 0 0 / 12%);"
