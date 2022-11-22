@@ -82,6 +82,17 @@ export const ContentGrid = styled.div`
         grid-template-columns: 32.4324324324% 66.2162162162%;
         grid-template-areas: "sidebar1 content" "sidebar2 content";
     }
+    @media screen and (max-width:1070px){
+        grid-template-columns: 100%;
+        grid-template-areas:
+                            "content"
+                            "sidebar1"
+                            "sidebar2";
+                            
+        .grid-column:nth-child(1), .grid-column:nth-child(3){
+            display:none;  
+        }      
+    }
     
     .grid-column:nth-child(1){
         grid-area: sidebar1;   
