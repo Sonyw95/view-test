@@ -19,11 +19,10 @@ const NewsPeedPage = ({isNormalSide}) => {
     const days = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
     const date = moment();
 
-    const startWeek = date.clone().startOf('month').week();
-    const endWeek = date.clone().endOf('month').week() === 1? 53 : date.clone().endOf('month').week();
-
-
     function getDays() {
+        const startWeek = date.clone().startOf('month').week();
+        const endWeek = date.clone().endOf('month').week() === 1? 53 : date.clone().endOf('month').week();
+
         let nowCalendar = [];
         for( let week = startWeek ; week <= endWeek ; week++){
                 nowCalendar.push(
@@ -38,7 +37,8 @@ const NewsPeedPage = ({isNormalSide}) => {
 
                             let isSelected = date.format('YYYYMMDD') === current.format('YYYYMMDD') ? 'selected' : '';
                             return (
-                                <p className={`calendar-week-day ${isSelected}`} key={i}>{current.format('D')}</p>
+                                <p className={`calendar-week-day ${isSelected}`} key={i}>{current.format('D')}
+                                </p>
                             );
                         }, [])}</div>
 

@@ -201,6 +201,14 @@ export const ContentGrid = styled.div`
                             color: #8f91ac;
                             font-weight: 500;
                             text-align: center;
+                            
+                            &.selected{
+                                color:#fff;
+                                background-color:rgb(255,90,0);
+                                border-radius:40%;
+                                padding:11px 0;
+                                margin:5px 0;
+                            }
                         }
                     }
                 }             
