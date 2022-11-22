@@ -16,11 +16,11 @@ function App() {
 
 
     const darkColor ={
-        globalColor: '#161b28', bgColor:"rgba(60,60,60,0.6)",leftBarColor:"rgba(40,40,40,0.6)",
+        globalColor: '#161b28', bgColor:"rgb(60,60,60)",leftBarColor:"rgba(40,40,40,0.6)", widgetBoxColor:"rgb(60,60,60)",
         inputColor: "rgba(30,30,30,0.6)",  headPgColor: "rgb(255,130,0)",leftLink:"background-color:#293249;box-shadow: 3px 5px 20px 0 rgb(0 0 0 / 12%);"
     };
     const lightColor = {
-        globalColor: "#f8f8fb" ,bgColor: 'rgb(255,130,0)',leftBarColor:"#fff",
+        globalColor: "#f8f8fb" ,bgColor: 'rgb(255,130,0)',leftBarColor:"#fff", widgetBoxColor:"#fff",
         inputColor: "rgba(255,90,0,0.5)", headPgColor :"red",leftLink:"background-color:#fff;box-shadow: 3px 5px 20px 0 rgba(94,92,154, .12);"
     }
 

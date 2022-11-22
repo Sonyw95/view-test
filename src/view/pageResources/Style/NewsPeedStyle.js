@@ -78,6 +78,11 @@ export const ContentGrid = styled.div`
     grid-template-areas: 'sidebar1 content sidebar2';
     grid-template-columns: 23.9864864865% 49.3243243243% 23.9864864865%;
     
+    @media screen and (max-width:1365px){
+        grid-template-columns: 32.4324324324% 66.2162162162%;
+        grid-template-areas: "sidebar1 content" "sidebar2 content";
+    }
+    
     .grid-column:nth-child(1){
         grid-area: sidebar1;   
     }
@@ -95,7 +100,8 @@ export const ContentGrid = styled.div`
         .widget-box{
             padding: 32px 28px;
             border-radius: 12px;
-            background-color: #fff;
+            background-color: ${(props) => props.theme.widgetBoxColor};
+            transition: background-color 1s, color 0.1s, border 0.5s;
             box-shadow: 0 0 40px 0 rgba(94,92,154, .06);
             position: relative;
             
@@ -312,11 +318,9 @@ export const ContentGrid = styled.div`
                         .quick-post-action-icon{
                             transition: fill .2s ease-in-out;
                             fill:#adafca;
-                            
                             &:hover{
                                 fill:rgb(255,130,0);
                             }
-
                         }
                     }
                     .quick-post-button{
@@ -326,12 +330,10 @@ export const ContentGrid = styled.div`
                         font-size: 0.75rem;
                         box-shadow: 4px 7px 12px 0 rgb(97 93 250 / 20%)
                     }
+                    
                 }
             
             }
-        }
-        
-        
         }
     }
 `;
