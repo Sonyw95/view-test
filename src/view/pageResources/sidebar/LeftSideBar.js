@@ -14,7 +14,7 @@ const LeftSideBar = () =>{
             <ul className={"menu small"}>
 
                 { menuList.map( (x) => (
-                    <li className={"menu-item " + x[2]}>
+                    <li className={"menu-item " + x[2]} key={x[0]}>
                         <Link to={"/"} className={"menu-item-link"}>
                             <svg className="menu-item-link-icon icon-newsfeed ">
                                 <use href={x[1]}/>

@@ -9,21 +9,50 @@ import qs from "../resources/image/quest/openq-s.png";
 
 import moment from "momnet";
 
+
 const NewsPeedPage = ({isNormalSide}) => {
 
     const [resizeWidth, setResizeWidth] = useState('274');
-    const dates = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
-    const [yearMonth, setYearMonth] = useState( moment().format("YYYY.MM") );
+
     const ref = useRef(null);
+
+    const days = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
+    const date = moment();
+
+    const startWeek = date.clone().startOf('month').week();
+    const endWeek = date.clone().endOf('month').week() === 1? 53 : date.clone().endOf('month').week();
+
+
+    function getDays() {
+        let nowCalendar = [];
+        for( let week = startWeek ; week <= endWeek ; week++){
+                nowCalendar.push(
+                    <div className={"calendar-week"} key={week}>{Array(7)
+                        .fill(0)
+                        .map((n, i) => {
+                            let current = date
+                                .clone()
+                                .week(week)
+                                .startOf('week')
+                                .add(n + i, 'day');
+
+                            let isSelected = date.format('YYYYMMDD') === current.format('YYYYMMDD') ? 'selected' : '';
+                            return (
+                                <p className={`calendar-week-day ${isSelected}`} key={i}>{current.format('D')}</p>
+                            );
+                        }, [])}</div>
+
+                )
+        }
+        return nowCalendar;
+    }
+
 
     const style ={
         transform: `translate(${resizeWidth}px, 0px)`,
         transition: "transform 0.4s ease-in-out 0s",
     }
 
-    const handleYearButton = () => {
-        setYearMonth(moment(-1).format("YYYY.MM"))
-    }
 
     const handleResize = (contentGrid) => {
         if(window.innerWidth > 1366){
@@ -50,7 +79,7 @@ const NewsPeedPage = ({isNormalSide}) => {
             <SectionBannerBlock >
                 <img className={"section-banner-icon"} src={newsPeedBanner}/>
                 <p className="section-banner-title">Newsfeed</p>
-                <p className="section-banner-text">Check what your friends have been up to!</p>
+                <p className="section-banner-text">최신 소식을 확인해보세요!</p>
             </SectionBannerBlock>
 
             <ContentGrid>
@@ -143,20 +172,20 @@ const NewsPeedPage = ({isNormalSide}) => {
                                 <use href="#svg-small-arrow"/>
                             </svg>
                         </div>
-                        <p className="widget-box-title">{yearMonth}</p>
+                        <p className="widget-box-title">{date.format('MMMM YYYY')}</p>
                         <div className={"widget-box-content"}>
                             <div className={"calendar"}>
                                 <div className={"calendar-week"}>
 
-                                    {dates.map ( (day, idx)=>{
+                                    {days.map ( (day, idx)=>{
                                         return(
                                             <p className={"calendar-week-day"} key={idx}>{day}</p>
                                         )
                                     })}
                                 </div>
-                                <div className={"calendar-days"}>
 
-                                </div>
+                                {getDays()}
+
                             </div>
                         </div>
                     </div>
