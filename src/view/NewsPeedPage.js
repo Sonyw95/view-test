@@ -19,6 +19,17 @@ const NewsPeedPage = ({isNormalSide}) => {
 
     const days = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
     const date = moment();
+    const [nowLength, setLength]= useState(1000);
+
+    const style ={
+        transform: `translate(${resizeWidth}px, 0px)`,
+        transition: "transform 0.4s ease-in-out 0s",
+    }
+
+    const onKeyUp = (e) => {
+        setLength(e.target.textLength);
+    }
+
 
     function getDays() {
         const startWeek = date.clone().startOf('month').week();
@@ -49,12 +60,6 @@ const NewsPeedPage = ({isNormalSide}) => {
     }
 
 
-    const style ={
-        transform: `translate(${resizeWidth}px, 0px)`,
-        transition: "transform 0.4s ease-in-out 0s",
-    }
-
-
     const handleResize = (contentGrid) => {
         if(window.innerWidth > 1366){
             const navigationWidth = isNormalSide ? 300 : 80,
@@ -67,6 +72,7 @@ const NewsPeedPage = ({isNormalSide}) => {
         }
 
     };
+
 
     useEffect( () => {
         window.addEventListener('resize', handleResize);
@@ -138,8 +144,8 @@ const NewsPeedPage = ({isNormalSide}) => {
                         <div className={"quick-post-body"}>
                             <form className={"form"}>
                                 <div className={"form-textarea"}>
-                                    <textarea id={"quick-textarea"} name={"quick-textarea"} className={"textarea"} placeholder={"안녕하세요. 오늘나의 상태메시지 입니다."}/>
-                                    <p className="form-textarea-limit-text">998/1000</p>
+                                    <textarea id={"quick-textarea"} name={"quick-textarea"} className={"textarea"} onKeyUp={onKeyUp} maxLength={1000} placeholder={"안녕하세요. 오늘나의 상태메시지 입니다."}/>
+                                    <p className="form-textarea-limit-text">{nowLength}/1000</p>
                                 </div>
                             </form>
                             <div className={"quick-post-footer"}>

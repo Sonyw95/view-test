@@ -289,7 +289,7 @@ export const ContentGrid = styled.div`
                         border-radius: 0;
                         border: none;
                         font-size: .8rem;
-                        padding: 26px 28px 0;
+                        padding: 20px 20px 0;
                         resize: none;
                         color: #3e3f5e;
                         transition: border-color .2s ease-in-out;
