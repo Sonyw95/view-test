@@ -2,44 +2,29 @@ import {LeftSideBarBlock} from "../Style/SideBarStyle";
 import {Link} from "react-router-dom";
 
 const LeftSideBar = () =>{
+    const menuList = [
+        ["NewsFeed", "#svg-newsfeed", "active"],
+        ["BLOG", "#svg-blog-posts",""],
+        ["FORUM", "#svg-forums", ""],
+    ]
 
     return(
         <LeftSideBarBlock>
 
             <ul className={"menu small"}>
-                <li className={"menu-item active"}>
+
+                { menuList.map( (x) => (
+                <li className={"menu-item active " + x[2]}>
                     <Link to={"/"} className={"menu-item-link"}>
                         <svg className="menu-item-link-icon icon-newsfeed ">
-                            <use href="#svg-newsfeed"/>
+                            <use href={x[1]}/>
                         </svg>
                         <div className={"menu-tooltip"}>
-                            <p className="menu-tooltip-text">Newsfeed</p>
+                            <p className="menu-tooltip-text">{x[0]}</p>
                         </div>
                     </Link>
                 </li>
-
-                <li className={"menu-item"}>
-                    <Link to={"/"} className={"menu-item-link"}>
-                        <svg className="menu-item-link-icon icon-blog-posts ">
-                            <use href="#svg-blog-posts"/>
-                        </svg>
-                        <div className={"menu-tooltip"}>
-                            <p className="menu-tooltip-text">BLOG</p>
-                        </div>
-                    </Link>
-                </li>
-
-                <li className={"menu-item"}>
-                    <Link to={"/"} className={"menu-item-link"}>
-                        <svg className="menu-item-link-icon icon-forums ">
-                            <use href="#svg-forums"/>
-                        </svg>
-                        <div className={"menu-tooltip"}>
-                            <p className="menu-tooltip-text">FORUM</p>
-                        </div>
-                    </Link>
-                </li>
-
+                ))}
 
             </ul>
 
