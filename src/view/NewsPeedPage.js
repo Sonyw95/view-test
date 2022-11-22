@@ -1,14 +1,16 @@
-import {ContentBlock, ContentGrid, SectionBannerBlock} from "./pageResources/Style/NewsPeedStyle";
 import {useEffect, useRef, useState} from "react";
-import newsPeedBanner from "../resources/image/banner/newsfeed-icon.png";
-import qs from "../resources/image/quest/openq-s.png";
+import {ContentBlock, ContentGrid, SectionBannerBlock} from "./pageResources/Style/NewsPeedStyle";
+
 import ProgressBar from "../component/common/ProgressBar";
 import ButtonM from "../component/common/ButtonM";
+
+import newsPeedBanner from "../resources/image/banner/newsfeed-icon.png";
+import qs from "../resources/image/quest/openq-s.png";
 
 
 const NewsPeedPage = ({isNormalSide}) => {
 
-    const [resizeWidth, setResizeWidth] = useState('234');
+    const [resizeWidth, setResizeWidth] = useState('274');
     const ref = useRef(null);
 
     const style ={
@@ -19,7 +21,7 @@ const NewsPeedPage = ({isNormalSide}) => {
     const handleResize = (contentGrid) => {
         if(window.innerWidth > 1366){
             const navigationWidth = isNormalSide ? 300 : 80,
-                availableWidth = document.body.clientWidth - navigationWidth -ref.current.offsetWidth-316,
+                availableWidth = document.body.clientWidth - navigationWidth -ref.current.offsetWidth-239,
                 offsetX = (availableWidth / 2 ) + navigationWidth;
             setResizeWidth(offsetX);
             console.log(offsetX);
@@ -31,7 +33,11 @@ const NewsPeedPage = ({isNormalSide}) => {
 
     useEffect( () => {
         window.addEventListener('resize', handleResize);
-    });
+
+        return() => {
+            window.removeEventListener('resize', handleResize);
+        }
+    },[]);
 
     return(
         <ContentBlock style={style} ref={ref} >
