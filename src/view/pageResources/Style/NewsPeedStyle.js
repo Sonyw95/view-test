@@ -99,6 +99,7 @@ export const ContentGrid = styled.div`
             box-shadow: 0 0 40px 0 rgba(94,92,154, .06);
             position: relative;
             
+            
             .widget-box-setting{
                 position: absolute;
                 top: 22px;
@@ -106,14 +107,20 @@ export const ContentGrid = styled.div`
                 z-index: 9999;
                 
                 display: flex;
-                width: 20px;
-                height: 6px;
+                width: 25px;
+                height: 9%;
                 cursor: pointer;
             }
             .widget-setting{
                 fill: #adafca;
                 opacity: .4;
-                transition: opacity .2s ease-in-out,fill .2s ease-in-out;               
+                transition: opacity .2s ease-in-out,fill .2s ease-in-out;         
+                
+                &.left{
+                    transform: scaleX(-1);
+                    position: relative;
+                    left: -35%;
+                }      
             }
             
             .widget-box-title{
@@ -157,7 +164,29 @@ export const ContentGrid = styled.div`
                         width:100%;
                         height:4px;
                     }
-                }              
+                } 
+                .calendar{
+                    margin: 0 auto;
+                    background-color: #fff;
+                    
+                    font-size: 80%;
+                    font-weight: 400;
+                    
+                    
+                    .calendar-week {
+                        justify-content: space-between;
+                        display: flex;
+                        
+                        .calendar-week-day{
+                            padding: 16px 0;
+                            font-size: .75rem;
+                            width: 14.2857142857%;
+                            color: #8f91ac;
+                            font-weight: 500;
+                            text-align: center;
+                        }
+                    }
+                }             
             }
             .widget-box-button{
                 width: 100%;
@@ -177,6 +206,7 @@ export const ContentGrid = styled.div`
                 cursor: pointer;
                 transition: background-color .2s ease-in-out,color .2s ease-in-out,border-color .2s ease-in-out,box-shadow .2s ease-in-out;
             }
+            
         }
         
         

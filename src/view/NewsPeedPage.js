@@ -11,6 +11,7 @@ import qs from "../resources/image/quest/openq-s.png";
 const NewsPeedPage = ({isNormalSide}) => {
 
     const [resizeWidth, setResizeWidth] = useState('274');
+    const dates = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
     const ref = useRef(null);
 
     const style ={
@@ -123,13 +124,37 @@ const NewsPeedPage = ({isNormalSide}) => {
                                     <ButtonM className={"quick-post-button"}>작성</ButtonM>
                                 </div>
                             </div>
-
-
                         </div>
-
-
                     </div>
                 </div>
+
+                <div className={"grid-column"}>
+                    <div className={"widget-box"}>
+                        <div className={"widget-box-setting"}>
+                            <svg className="widget-setting left ">
+                                <use href="#svg-small-arrow"/>
+                            </svg>
+                            <svg className="widget-setting ">
+                                <use href="#svg-small-arrow"/>
+                            </svg>
+                        </div>
+                        <p className="widget-box-title">2022.11</p>
+                        <div className={"widget-box-content"}>
+                            <div className={"calendar"}>
+                                <div className={"calendar-week"}>
+
+                                    {dates.map ( (day, idx)=>{
+                                        return(
+                                            <p className={"calendar-week-day"}>{day}</p>
+                                        )
+                                    })}
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
             </ContentGrid>
 
         </ContentBlock>
