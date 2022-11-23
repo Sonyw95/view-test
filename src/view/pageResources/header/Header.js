@@ -1,7 +1,7 @@
 import {HeaderBlock, HeaderActionBlock, SearchBarBlock} from "../Style/HeaderStyle";
 import logo from "../../../resources/image/logo/main_logo.png";
 import darkLogo from "../../../resources/image/logo/main_logo-dark.png";
-import React from "react";
+import React, {useReducer} from "react";
 import ProgressBar from "../../../component/common/ProgressBar";
 import { useSelectClose } from "../../../hooks/useSelectClose";
 import {Link} from "react-router-dom";
@@ -11,9 +11,25 @@ import ButtonM from "../../../component/common/ButtonM";
 
 const Header = ({ isDark, toggleDarkMode}) => {
 
-    const [isNoticeOpen, noticeRef, noticeHandler] = useSelectClose(false);
     const [isMessage, messageRef, messageHandler] = useSelectClose(false);
     const [isSettings, settingRef, settingHandler] = useSelectClose(false);
+
+    function reducer(state, action) {
+        switch (action.type){
+
+            case "NOTICE":
+                return {notice: !state.notice, message: false}
+            case "MESSAGE":
+                return {notice: false, message: !state.message}
+            default :
+                return {notice: false, message: false}
+        };
+    }
+
+    const [state, dispatch] = useReducer(reducer, {
+        notice: false,
+        message: false,
+    });
 
 
     return (
@@ -35,8 +51,6 @@ const Header = ({ isDark, toggleDarkMode}) => {
                 {/* Mobile 슬라이드 메뉴 트리거 */}
                 <div className="mobile-menu-trigger">
                     <div className="burger-icon inverted">
-                        <div className="burger-icon-bar"/>
-                        <div className="burger-icon-bar"/>
                         <div className="burger-icon-bar"/>
                     </div>
                 </div>
@@ -75,13 +89,13 @@ const Header = ({ isDark, toggleDarkMode}) => {
             <HeaderActionBlock>
                 {/* 드롭박스 메뉴 모음 */}
                 <div className="dropdown-list">
-                    <div className="dropdown-list-item" onClick={noticeHandler} ref={noticeRef}>
+                    <div className="dropdown-list-item" onClick={() => dispatch({type: "NOTICE"})}>
                         <svg className="dropdown-list-icon icon-notification">
                             <use href="#svg-notification"/>
                         </svg>
 
                         {/* 드롭박스 팝업창 */}
-                        <div className={"list-item first" + ( !isNoticeOpen? '' : ' drop') }>
+                        <div className={"list-item first" + ( !state.notice? '' : ' drop') }>
                             <div className={"dropdown-box-header"}>
                                 <p className={"dropdown-box-header-title"}>알림창</p>
                                 <p className={"dropdown-box-header-action"}>전부읽기</p>
@@ -92,7 +106,7 @@ const Header = ({ isDark, toggleDarkMode}) => {
                                         <Link to="/"><img className={"user-avatar"} src={avatar} alt={"avatar"}/></Link>
                                         <div className={"user-avatar-level"}>
                                             <div className={"user-avatar-border"}>
-                                               <span className={"user-level-info"}>4</span>
+                                                <span className={"user-level-info"}>4</span>
                                             </div>
                                         </div>
                                     </div>
@@ -102,12 +116,12 @@ const Header = ({ isDark, toggleDarkMode}) => {
                     </div>
 
 
-                    <div className="dropdown-list-item alert" onClick={messageHandler} ref={messageRef}>
-                        <svg className="dropdown-list-icon icon-messages ">
+                    <div className="dropdown-list-item alert" >
+                        <svg className="dropdown-list-icon icon-messages" onClick={() => dispatch({type: "MESSAGE"})}>
                             <use href="#svg-messages"/>
                         </svg>
                         {/* 드롭박스 팝업창 */}
-                        <div className={"list-item" + ( !isMessage? '' : ' drop') }>
+                        <div className={"list-item" + ( !state.message? '' : ' drop') } >
                             <div className={"dropdown-box-header"}>
                                 <p className={"dropdown-box-header-title"}>메시지</p>
                                 <p className={"dropdown-box-header-action"}>전부읽기</p>

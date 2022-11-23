@@ -73,8 +73,9 @@ export const HeaderActionBlock = styled.div`
     .mobile-menu-trigger{
         display: none;
     }
-    .burger-icon .burger-icon-bar {
+    .burger-icon .burger-icon-bar, .burger-icon-bar:after, .burger-icon-bar:before {
         height: 2px;
+        width: 100%;
         background-color: #fff;
         position: absolute;
         right: 0;
@@ -85,37 +86,21 @@ export const HeaderActionBlock = styled.div`
         height: 14px;
         position: relative;
     }
-    .burger-icon.inverted .burger-icon-bar:first-child {
-        width: 100%;
-    }
-    .burger-icon .burger-icon-bar:first-child {
-        top: 0;
-        width: 10px;
-    }
-    .burger-icon.inverted .burger-icon-bar {
-        left: 0;
-    }
-    .burger-icon.inverted .burger-icon-bar:nth-child(2) {
+    .burger-icon-bar:after{
+        content: "";
         width: 14px;
-    }
-    .burger-icon .burger-icon-bar:nth-child(2) {
         top: 6px;
-        width: 14px;
-    }
-    .burger-icon.inverted .burger-icon-bar {
         left: 0;
     }
-    .burger-icon.inverted .burger-icon-bar:nth-child(3) {
+    .burger-icon-bar:before{
+        content: "";
         width: 10px;
-    }
-    .burger-icon .burger-icon-bar:nth-child(3) {
         top: 12px;
-        width: 100%;
-    }
-    .burger-icon.inverted .burger-icon-bar {
         left: 0;
     }
     
+  
+ 
     
     
     .next-progress{

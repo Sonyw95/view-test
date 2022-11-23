@@ -66,7 +66,6 @@ const NewsPeedPage = ({isNormalSide}) => {
                 availableWidth = document.body.clientWidth - navigationWidth -ref.current.offsetWidth-239,
                 offsetX = (availableWidth / 2 ) + navigationWidth;
             setResizeWidth(offsetX);
-            console.log(offsetX);
         }else{
             setResizeWidth(0);
         }
@@ -84,7 +83,7 @@ const NewsPeedPage = ({isNormalSide}) => {
     return(
         <ContentBlock style={style} ref={ref} >
             <SectionBannerBlock >
-                <img className={"section-banner-icon"} src={newsPeedBanner}/>
+                <img className={"section-banner-icon"} src={newsPeedBanner} alt={"NewsPeedLogo"}/>
                 <p className="section-banner-title">Newsfeed</p>
                 <p className="section-banner-text">최신 소식을 확인해보세요!</p>
             </SectionBannerBlock>
@@ -102,7 +101,7 @@ const NewsPeedPage = ({isNormalSide}) => {
                         <div className={"widget-box-content"}>
                             <div className={"widget-box-list"}>
                                 <div className={"widget-box-item-info"}>
-                                    <img src={qs}/>
+                                    <img src={qs} alt={"QuestBadge"}/>
                                     <p className="quest-preview-title">무슨 퀘스트</p>
                                     <p className="quest-preview-text">뭐를 해야함</p>
                                 </div>
@@ -115,7 +114,7 @@ const NewsPeedPage = ({isNormalSide}) => {
                         <div className={"widget-box-content"}>
                             <div className={"widget-box-list"}>
                                 <div className={"widget-box-item-info"}>
-                                    <img src={qs}/>
+                                    <img src={qs} alt={"QuestBadge"}/>
                                     <p className="quest-preview-title">무슨 퀘스트</p>
                                     <p className="quest-preview-text">뭐를 해야함</p>
                                 </div>
