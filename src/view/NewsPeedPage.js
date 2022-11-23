@@ -1,4 +1,4 @@
-import {useEffect, useRef, useState} from "react";
+import React, {useEffect, useRef, useState} from "react";
 import {ContentBlock, ContentGrid, SectionBannerBlock} from "./pageResources/Style/NewsPeedStyle";
 
 import ProgressBar from "../component/common/ProgressBar";
@@ -9,6 +9,8 @@ import qs from "../resources/image/quest/openq-s.png";
 
 import moment from "momnet";
 import {Link} from "react-router-dom";
+import avatar from "../resources/image/avatar/24.jpg";
+import {UserAvatar} from "../component/common/UserAvatar";
 
 
 const NewsPeedPage = ({isNormalSide}) => {
@@ -166,6 +168,30 @@ const NewsPeedPage = ({isNormalSide}) => {
                             </div>
                         </div>
                     </div>
+
+                    <div className={"widget-box"}>
+                        <div className={"widget-box-setting"}>
+                            <svg className="widget-setting ">
+                                <use href="#svg-more-dots"/>
+                            </svg>
+                        </div>
+                        <Link to="/"><UserAvatar src={avatar}/></Link>
+
+                        <div className={"widget-box-content"}>
+                            <div className={"widget-box-list"}>
+                                <div className={"widget-box-item-info"}>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div className={"widget-box-content"}>
+                            <div className={"widget-box-list"}>
+                                <div className={"widget-box-item-info"}>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
                 </div>
 
                 <div className={"grid-column"}>

@@ -8,10 +8,10 @@ import {Link} from "react-router-dom";
 import avatar from "../../../resources/image/avatar/24.jpg"
 import {BsFillSunFill,  BsMoonFill} from "react-icons/bs";
 import ButtonM from "../../../component/common/ButtonM";
+import {UserAvatar} from "../../../component/common/UserAvatar";
 
 const Header = ({ isDark, toggleDarkMode}) => {
 
-    const [isMessage, messageRef, messageHandler] = useSelectClose(false);
     const [isSettings, settingRef, settingHandler] = useSelectClose(false);
 
     function reducer(state, action) {
@@ -103,7 +103,7 @@ const Header = ({ isDark, toggleDarkMode}) => {
                             <div className={"dropdown-box-list"}>
                                 <div className={"dropdown-box-list-item"}>
                                     <div className={"list-item-notification"}>
-                                        <Link to="/"><img className={"user-avatar"} src={avatar} alt={"avatar"}/></Link>
+                                        <Link to="/"><UserAvatar src={avatar}/></Link>
                                         <div className={"user-avatar-level"}>
                                             <div className={"user-avatar-border"}>
                                                 <span className={"user-level-info"}>4</span>
@@ -129,7 +129,7 @@ const Header = ({ isDark, toggleDarkMode}) => {
                             <div className={"dropdown-box-list"}>
                                 <div className={"dropdown-box-list-item"}>
                                     <div className={"list-item-notification"}>
-                                        <Link to="/"><img className={"user-avatar"} src={avatar} alt={"avatar"}/></Link>
+                                        <Link to="/"><UserAvatar src={avatar}/></Link>
                                         <div className={"user-avatar-level"}>
                                             <div className={"user-avatar-border"}>
                                                 <span className={"user-level-info"}>4</span>
