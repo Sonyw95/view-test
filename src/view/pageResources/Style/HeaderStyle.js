@@ -140,22 +140,6 @@ export const HeaderActionBlock = styled.div`
         padding: 0 18px;
         position: relative;
         
-        .dropdown-list-item{
-            position: relative;
-            align-items: center;
-            display: flex;
-            height: 100%;
-            padding: 0 14px;
-            cursor:pointer; 
-            transition: transform .2s ease-in-out;
-            
-            .settings{
-                height: 80px;
-                display: flex;
-                padding: 0 18px;
-                position: relative;
-            }
-        }
     }
     .dropdown-list:before {
         top:24px;
@@ -175,86 +159,6 @@ export const HeaderActionBlock = styled.div`
         background-color: #dedeea;
         position: absolute;
     }
-    .list-item{
-        background-color: #fff;
-        position: absolute;
-        top: 64px;
-        right: 6px;
-        width: 384px;
-        box-shadow: 3px 5px 40px 0 rgb(94 92 154 / 6%);
-        border-radius: 10px;
-        opacity: 0;
-        visibility: hidden;
-        transform: translate(0px, -20px);
-        transition: opacity 0.4s ease, transform 0.4s ease, visibility 0.4s;
-        z-index: 999;
-        padding-bottom: 60px;
-        
-        .dropdown-box-header{
-            display:flex;
-            justify-content: space-between;
-            padding: 28px 28px 20px;  
-            
-            .dropdown-box-header-title{
-                font-size: .85rem;
-                font-weight: 700;
-            }  
-            .dropdown-box-header-action{
-                margin-right: 16px;
-                color: #8f91ac;
-                font-size: .65rem;
-                font-weight: 700;
-                opacity: .6;
-                cursor: pointer;
-            }          
-        }
-        .dropdown-box-list{
-            position: relative;
-            flex-direction: column;
-            flex-wrap: wrap;
-            justify-content: flex-start;
-            align-content: flex-start;
-            align-items: flex-start;
-                
-            .dropdown-box-list-item{
-                display: block;
-                padding: 16px 28px;
-                    
-                .list-item-notification{
-                    min-height: 44px;
-                    padding: 2px 60px 0 52px;
-                    position: relative;
-                }
-                .user-avatar-level{
-                    width: 18px;
-                    height: 20px;
-                    top: 60%;
-                    left: 8%;
-
-                    
-                    display: flex;
-                    justify-content: center;
-                    align-items: center;
-                    position: absolute;
-                    border-radius:20px;
-                    border: 2px solid white;
-                    background-color:rgb(255,130,0);
-                    z-index: 4;
-                    
-                    .user-avatar-border{
-                        text-align:center;
-                        color:white;
-                        font-size:1rem;
-                        z-index: 4;
-                        .user-level-info{
-                            font-size:0.6rem;
-                            background-color:rgb(255,130,0);
-                        }
-                    }
-                }
-            }
-        }
-    }
     .user-avatar{
         position: absolute;
         top:0;
@@ -263,11 +167,6 @@ export const HeaderActionBlock = styled.div`
         height:44px;
         border-radius: 20px;
                         
-    }
-    .drop{
-        opacity: 1 !important;
-        visibility:visible !important;
-        transform: translateY(0) !important;
     }
     .alert svg{
         fill: #fff;
@@ -327,8 +226,6 @@ export const HeaderActionBlock = styled.div`
     .header-login-action{
         margin-right: 2rem;
         .header-login-button{
-            padding: 0 26px;
-            margin-right: 2.5rem;
         }
     }
     

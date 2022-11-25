@@ -7,7 +7,7 @@ import {
     AuthFormBlock,
 } from "./pageResources/Style/LandingStyle";
 import React, {useReducer} from 'react';
-import LandingModal from "../component/common/LandingModal";
+import LandingModal from "../component/common/Resources/LandingModal";
 import {Link} from "react-router-dom";
 import logo from "../resources/image/logo/main_logo.png";
 import darkLogo from "../resources/image/logo/main_logo-dark.png";

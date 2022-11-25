@@ -1,8 +1,8 @@
 import {FooterBlock, FooterProgressBlock} from "../Style/FooterNaviStyle";
 import React from "react";
-import ProgressBar from "../../../component/common/ProgressBar";
+import ProgressBar from "../../../component/common/Resources/ProgressBar";
 
-const FooterNavi = () => {
+const FooterNavi = ({popList}) => {
 
     return(
         <FooterBlock>

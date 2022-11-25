@@ -33,16 +33,32 @@ const AvatarLevel = styled.div`
     font-size: 1rem;
     z-index: 4;
     font-size: 0.6rem;
-    background-color: rgb(255,130,0);
 `;
 
 
-export const UserAvatar = (props) => {
+export const HeaderPopAvatar = (props) => {
     return (
         <>
-            <AvatarBlock src={props.src}/>
-            <AvatarLevelBlock>
-                <AvatarLevel {...props.level}/>
+            <AvatarBlock src={props.src} place={props.place}/>
+            <AvatarLevelBlock place={props.place}>
+                <AvatarLevel place={props.place}>
+                    {props.level}
+                </AvatarLevel>
+            </AvatarLevelBlock>
+        </>
+    )
+}
+
+
+
+export const ContentAvatar = (props) => {
+    return(
+        <>
+            <AvatarBlock src={props.src} place={props.place}/>
+            <AvatarLevelBlock place={props.place}>
+                <AvatarLevel place={props.place} >
+                    {props.level}
+                </AvatarLevel>
             </AvatarLevelBlock>
         </>
     )

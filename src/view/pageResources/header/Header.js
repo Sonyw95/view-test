@@ -1,36 +1,17 @@
 import {HeaderBlock, HeaderActionBlock, SearchBarBlock} from "../Style/HeaderStyle";
 import logo from "../../../resources/image/logo/main_logo.png";
 import darkLogo from "../../../resources/image/logo/main_logo-dark.png";
-import React, {useReducer} from "react";
-import ProgressBar from "../../../component/common/ProgressBar";
+import ProgressBar from "../../../component/common/Resources/ProgressBar";
 import { useSelectClose } from "../../../hooks/useSelectClose";
 import {Link} from "react-router-dom";
 import avatar from "../../../resources/image/avatar/24.jpg"
 import {BsFillSunFill,  BsMoonFill} from "react-icons/bs";
-import ButtonM from "../../../component/common/ButtonM";
-import {UserAvatar} from "../../../component/common/UserAvatar";
+import {HeaderPopAvatar} from "../../../component/common/Resources/UserAvatar";
+import {ButtonComponent, DropBoxComponent} from "../../../component/common/IndexComponent";
 
-const Header = ({ isDark, toggleDarkMode}) => {
+const Header = ({ isDark, toggleDarkMode, popList}) => {
 
     const [isSettings, settingRef, settingHandler] = useSelectClose(false);
-
-    function reducer(state, action) {
-        switch (action.type){
-
-            case "NOTICE":
-                return {notice: !state.notice, message: false}
-            case "MESSAGE":
-                return {notice: false, message: !state.message}
-            default :
-                return {notice: false, message: false}
-        };
-    }
-
-    const [state, dispatch] = useReducer(reducer, {
-        notice: false,
-        message: false,
-    });
-
 
     return (
         <HeaderBlock>
@@ -89,62 +70,11 @@ const Header = ({ isDark, toggleDarkMode}) => {
             <HeaderActionBlock>
                 {/* 드롭박스 메뉴 모음 */}
                 <div className="dropdown-list">
-                    <div className="dropdown-list-item" onClick={() => dispatch({type: "NOTICE"})}>
-                        <svg className="dropdown-list-icon icon-notification">
-                            <use href="#svg-notification"/>
-                        </svg>
-
-                        {/* 드롭박스 팝업창 */}
-                        <div className={"list-item first" + ( !state.notice? '' : ' drop') }>
-                            <div className={"dropdown-box-header"}>
-                                <p className={"dropdown-box-header-title"}>알림창</p>
-                                <p className={"dropdown-box-header-action"}>전부읽기</p>
-                            </div>
-                            <div className={"dropdown-box-list"}>
-                                <div className={"dropdown-box-list-item"}>
-                                    <div className={"list-item-notification"}>
-                                        <Link to="/"><UserAvatar src={avatar}/></Link>
-                                        <div className={"user-avatar-level"}>
-                                            <div className={"user-avatar-border"}>
-                                                <span className={"user-level-info"}>4</span>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-
-                    <div className="dropdown-list-item alert" >
-                        <svg className="dropdown-list-icon icon-messages" onClick={() => dispatch({type: "MESSAGE"})}>
-                            <use href="#svg-messages"/>
-                        </svg>
-                        {/* 드롭박스 팝업창 */}
-                        <div className={"list-item" + ( !state.message? '' : ' drop') } >
-                            <div className={"dropdown-box-header"}>
-                                <p className={"dropdown-box-header-title"}>메시지</p>
-                                <p className={"dropdown-box-header-action"}>전부읽기</p>
-                            </div>
-                            <div className={"dropdown-box-list"}>
-                                <div className={"dropdown-box-list-item"}>
-                                    <div className={"list-item-notification"}>
-                                        <Link to="/"><UserAvatar src={avatar}/></Link>
-                                        <div className={"user-avatar-level"}>
-                                            <div className={"user-avatar-border"}>
-                                                <span className={"user-level-info"}>4</span>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div className="dropdown-list-item" onClick={() => toggleDarkMode()} >
-                        {isDark? <BsFillSunFill size="20" color={"#fff"} className={"darkSwitch"}/> : <BsMoonFill size="20" color="black"/>  }
-                    </div>
+                    {popList.map( (key,index)=>(
+                            <DropBoxComponent data={key} key={index}/>
+                    ))}
                 </div>
+
 
                 <div className="dropdown-list-setting" >
                     <div className="header-settings-action" onClick={settingHandler} ref={settingRef}>
@@ -153,7 +83,7 @@ const Header = ({ isDark, toggleDarkMode}) => {
                         </svg>
                         <div className={"list-item-setting" + ( !isSettings? '' : ' drop') }>
                             <div className={"user-status"}>
-                                <Link to={"/"}><img className={"user-avatar"} src={avatar} alt={"avatar"}/></Link>
+                                <Link to={"/"}><HeaderPopAvatar src={avatar} place={"setting"}/></Link>
                             </div>
                         </div>
                     </div>
@@ -163,7 +93,7 @@ const Header = ({ isDark, toggleDarkMode}) => {
             </HeaderActionBlock>
 
             <HeaderActionBlock>
-                <Link to={"/landing"} className={"header-login-action"}><ButtonM className="header-login-button">로그인</ButtonM></Link>
+                <Link to={"/landing"} className={"header-login-action"}><ButtonComponent>로그인</ButtonComponent></Link>
             </HeaderActionBlock>
 
         </HeaderBlock>

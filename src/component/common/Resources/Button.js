@@ -2,6 +2,8 @@ import styled from 'styled-components';
 
 const StyledButton = styled.button`
         width:100%;
+        padding: 0 26px;
+        margin-right: 2.5rem;
         display: inline-block;
         height:54px;
         border-radius: 10px;
@@ -20,6 +22,6 @@ const StyledButton = styled.button`
         }
     `;
 
-const ButtonM = props => <StyledButton {...props}/>;
+const Button = props => <StyledButton {...props}/>;
 
-export default ButtonM;
+export default Button;

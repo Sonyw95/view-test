@@ -1,8 +1,8 @@
 import React, {useEffect, useRef, useState} from "react";
 import {ContentBlock, ContentGrid, SectionBannerBlock} from "./pageResources/Style/NewsPeedStyle";
 
-import ProgressBar from "../component/common/ProgressBar";
-import ButtonM from "../component/common/ButtonM";
+import ProgressBar from "../component/common/Resources/ProgressBar";
+import Button from "../component/common/Resources/Button";
 
 import newsPeedBanner from "../resources/image/banner/newsfeed-icon.png";
 import qs from "../resources/image/quest/openq-s.png";
@@ -10,7 +10,7 @@ import qs from "../resources/image/quest/openq-s.png";
 import moment from "momnet";
 import {Link} from "react-router-dom";
 import avatar from "../resources/image/avatar/24.jpg";
-import {UserAvatar} from "../component/common/UserAvatar";
+import {ContentAvatar, UserAvatar} from "../component/common/Resources/UserAvatar";
 
 
 const NewsPeedPage = ({isNormalSide}) => {
@@ -163,7 +163,7 @@ const NewsPeedPage = ({isNormalSide}) => {
                                     </div>
                                 </div>
                                 <div className={"quick-post-footer-action"}>
-                                    <ButtonM className={"quick-post-button"}>작성</ButtonM>
+                                    <Button className={"quick-post-button"}>작성</Button>
                                 </div>
                             </div>
                         </div>
@@ -175,7 +175,9 @@ const NewsPeedPage = ({isNormalSide}) => {
                                 <use href="#svg-more-dots"/>
                             </svg>
                         </div>
-                        <Link to="/"><UserAvatar src={avatar}/></Link>
+                        <div className="widget-box-title">
+                            <ContentAvatar src={avatar} level={"4"}/>
+                        </div>
 
                         <div className={"widget-box-content"}>
                             <div className={"widget-box-list"}>

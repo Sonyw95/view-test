@@ -1,4 +1,4 @@
-import ButtonM from "../component/common/ButtonM";
+import Button from "../component/common/Resources/Button";
 import {Link} from "react-router-dom";
 import kakao from "../resources/image/logo/KakaoTalk_logo.png";
 import { FormBoxBlock, SocialBlock, FormBlock } from "./pageResources/Style/LandingFormStyle";
@@ -42,7 +42,7 @@ const LoginPage = () => {
                     </div>
 
                     <div className="form-row">
-                        <ButtonM>로그인!</ButtonM>
+                        <Button>로그인!</Button>
                     </div>
                 </form>
 

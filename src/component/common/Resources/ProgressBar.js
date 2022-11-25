@@ -15,3 +15,14 @@ export const FillerStyle = styled.div`
         background-color: ${ (props) => props.isWidget ? "rgb(255,130,0)" : "#fff"};
         text-align: right;
     `;
+
+const ProgressBar = (props) =>{
+
+    return(
+        <ContainerBlock  isWidget={props.widget} >
+            <FillerStyle isWidget={props.widget} completed={props.completed} />
+        </ContainerBlock>
+    )
+}
+
+export default ProgressBar;

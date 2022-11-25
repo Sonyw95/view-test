@@ -1,4 +1,4 @@
-import ButtonM from "../component/common/ButtonM";
+import Button from "../component/common/Resources/Button";
 import {Link} from "react-router-dom";
 import kakao from "../resources/image/logo/KakaoTalk_logo.png";
 import { FormBoxBlock, SocialBlock, FormBlock } from "./pageResources/Style/LandingFormStyle";
@@ -79,7 +79,7 @@ const RegisterPage = () => {
                     </div>
 
                     <div className="form-row">
-                        <ButtonM>회원가입!</ButtonM>
+                        <Button>회원가입!</Button>
                     </div>
                 </form>
 
