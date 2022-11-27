@@ -86,8 +86,8 @@ const DropBox = (props) => {
 
 
     return(
-        <DropDownListBlock>
-            <svg className={props.data.icon}>
+        <DropDownListBlock className={props.data.alert}>
+            <svg className={props.data.icon} >
                 <use href={props.data.svg}/>
             </svg>
         <DropDownPopBlock>

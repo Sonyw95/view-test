@@ -2,16 +2,10 @@ import {HeaderBlock, HeaderActionBlock, SearchBarBlock} from "../Style/HeaderSty
 import logo from "../../../resources/image/logo/main_logo.png";
 import darkLogo from "../../../resources/image/logo/main_logo-dark.png";
 import ProgressBar from "../../../component/common/Resources/ProgressBar";
-import { useSelectClose } from "../../../hooks/useSelectClose";
 import {Link} from "react-router-dom";
-import avatar from "../../../resources/image/avatar/24.jpg"
-import {BsFillSunFill,  BsMoonFill} from "react-icons/bs";
-import {HeaderPopAvatar} from "../../../component/common/Resources/UserAvatar";
 import {ButtonComponent, DropBoxComponent} from "../../../component/common/IndexComponent";
 
 const Header = ({ isDark, toggleDarkMode, popList}) => {
-
-    const [isSettings, settingRef, settingHandler] = useSelectClose(false);
 
     return (
         <HeaderBlock>
@@ -35,7 +29,6 @@ const Header = ({ isDark, toggleDarkMode, popList}) => {
                         <div className="burger-icon-bar"/>
                     </div>
                 </div>
-
             </HeaderActionBlock>
 
             {/* 중앙 검색 바*/}
@@ -60,9 +53,7 @@ const Header = ({ isDark, toggleDarkMode, popList}) => {
                     <div className="next-progress-bar">
                         <ProgressBar completed={"30"}/>
                     </div>
-
                 </div>
-
             </HeaderActionBlock>
 
 
@@ -74,22 +65,6 @@ const Header = ({ isDark, toggleDarkMode, popList}) => {
                             <DropBoxComponent data={key} key={index}/>
                     ))}
                 </div>
-
-
-                <div className="dropdown-list-setting" >
-                    <div className="header-settings-action" onClick={settingHandler} ref={settingRef}>
-                        <svg className="dropdown-list-icon icon-settings">
-                            <use href="#svg-settings"/>
-                        </svg>
-                        <div className={"list-item-setting" + ( !isSettings? '' : ' drop') }>
-                            <div className={"user-status"}>
-                                <Link to={"/"}><HeaderPopAvatar src={avatar} place={"setting"}/></Link>
-                            </div>
-                        </div>
-                    </div>
-
-                </div>
-
             </HeaderActionBlock>
 
             <HeaderActionBlock>

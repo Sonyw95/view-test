@@ -15,6 +15,7 @@ const LayOut = ({isDark, toggleDarkMode, isNormalSide, toggleSide}) => {
             profile: avatar,
             place: "header",
             level:"4",
+            alert:"alert",
         },
         {
             icon: "icon-messages",
@@ -23,6 +24,16 @@ const LayOut = ({isDark, toggleDarkMode, isNormalSide, toggleSide}) => {
             profile: avatar,
             place: "header",
             level:"4",
+            alert:""
+        },
+        {
+            icon: "icon-settings",
+            svg: "#svg-settings",
+            title: "안내",
+            profile: avatar,
+            place: "header",
+            level:"4",
+            alert:""
         }
     ]
 
