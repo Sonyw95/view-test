@@ -144,7 +144,7 @@ svg {
 .form-row, .table, .figure, h1, h2, h3, h4, h5, h6, ol, p, ul{
   margin: 0;
 }
-.menu .menu-item.active .menu-item-link .menu-item-link-icon, .menu .menu-item.active .menu-item-link:hover .menu-item-link-icon {
+.menu .menu-item.true .menu-item-link .menu-item-link-icon, .menu .menu-item.true .menu-item-link:hover .menu-item-link-icon {
   fill: #fff;
 }
 

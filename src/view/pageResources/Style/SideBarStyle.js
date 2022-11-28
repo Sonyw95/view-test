@@ -39,13 +39,13 @@ export const LeftSideBarBlock = styled.div`
             margin-bottom: 10px;
       
         }
-        .menu-item.active > .menu-item-link{
+        .menu-item.true > .menu-item-link{
                 color:white;
                 background-color:rgb(255,130,0);
                 box-shadow: 4px 7px 12px 0 rgb(255, 130, 0 / 20%);
         }
         
-        .menu-item:hover:not(.active) > .menu-item-link   {
+        .menu-item:hover:not(.true) > .menu-item-link   {
             ${ (props) => props.theme.leftLink}
             
             .menu-tooltip{

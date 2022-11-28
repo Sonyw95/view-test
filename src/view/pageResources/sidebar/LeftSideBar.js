@@ -3,24 +3,43 @@ import {Link} from "react-router-dom";
 
 const LeftSideBar = () =>{
     const menuList = [
-        ["NewsFeed", "#svg-newsfeed", "active"],
-        ["BLOG", "#svg-blog-posts",""],
-        ["FORUM", "#svg-forums", ""],
+        {
+            id: 1,
+            menu: "NewsFeed",
+            icon: "#svg-newsfeed",
+            path:"/",
+        },
+        {
+            id: 2,
+            menu: "BLOG",
+            icon: "#svg-blog-posts",
+            path:"/a",
+        },
+        {
+            id: 3,
+            menu: "FORUM",
+            icon: "#svg-forums",
+            path:"/b",
+        }
     ]
+
+    function isActive(path){
+        return window.location.pathname.startsWith(path);
+    }
 
     return(
         <LeftSideBarBlock>
 
             <ul className={"menu small"}>
 
-                { menuList.map( (x) => (
-                    <li className={"menu-item " + x[2]} key={x[0]}>
-                        <Link to={"/"} className={"menu-item-link"}>
+                { menuList.map( (value, index) => (
+                    <li className={`menu-item ${isActive(value.path)}` } key={value.id} >
+                        <Link to={value.path} className={"menu-item-link"} >
                             <svg className="menu-item-link-icon icon-newsfeed ">
-                                <use href={x[1]}/>
+                                <use href={value.icon}/>
                             </svg>
                             <div className={"menu-tooltip"}>
-                                <p className="menu-tooltip-text">{x[0]}</p>
+                                <p className="menu-tooltip-text">{value.name}</p>
                             </div>
                         </Link>
                     </li>
