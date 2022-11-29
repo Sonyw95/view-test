@@ -1,7 +1,7 @@
 import styled from "styled-components";
 import {Link} from "react-router-dom";
 import {HeaderPopAvatar} from "./UserAvatar";
-import {useState} from "react";
+import {useState, useEffect, useRef} from "react";
 
 const DropDownListBlock = styled.div`
     position: relative;
@@ -89,8 +89,11 @@ const DropBox = (data) => {
 
     const [isOpen, setIsOpen] = useState(false);
 
+    const dropDownRef = useRef(null);
+
+
     return(
-        <DropDownListBlock className={`${data.data.alert} `} onClick={() => setIsOpen(!isOpen)}  >
+        <DropDownListBlock className={`${data.data.alert} `} onClick={() => setIsOpen(!isOpen)}  ref={dropDownRef}  >
             <svg className={data.data.icon} >
                 <use href={data.data.svg}/>
             </svg>

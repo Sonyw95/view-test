@@ -13,6 +13,7 @@ const Header = ({ isDark, toggleDarkMode, dropDownList }) => {
     useEffect( () => {
 
         function handleClickOutSide(event){
+            console.log(event.target);
             if(dropDownRef.current && !dropDownRef.current.contains(event.target)){
                 console.log("외부 클릭 감지");
             }
