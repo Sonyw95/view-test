@@ -4,8 +4,23 @@ import darkLogo from "../../../resources/image/logo/main_logo-dark.png";
 import ProgressBar from "../../../component/common/Resources/ProgressBar";
 import {Link} from "react-router-dom";
 import {ButtonComponent, DropBoxComponent} from "../../../component/common/IndexComponent";
+import {useRef , useEffect} from "react";
 
-const Header = ({ isDark, toggleDarkMode, popList}) => {
+const Header = ({ isDark, toggleDarkMode, dropDownList, handleDropDownActive}) => {
+
+    const drowDownRef = useRef(null);
+
+    useEffect( () => {
+        function handleClickOutSide(event){
+            if(drowDownRef.current && !drowDownRef.current.contains(event.target)){
+                console.log("외부 클릭 감지");
+            }
+        }
+        document.addEventListener("click", handleClickOutSide);
+        return() => {
+            document.removeEventListener("click", handleClickOutSide);
+        }
+    },[drowDownRef]);
 
     return (
         <HeaderBlock>
@@ -60,9 +75,9 @@ const Header = ({ isDark, toggleDarkMode, popList}) => {
             {/* 우측 드롭박스 메뉴바 */}
             <HeaderActionBlock>
                 {/* 드롭박스 메뉴 모음 */}
-                <div className="dropdown-list">
-                    {popList.map( (key,index)=>(
-                            <DropBoxComponent data={key} key={index}/>
+                <div className="dropdown-list"  ref={drowDownRef}>
+                    {dropDownList.map( (key,index)=>(
+                            <DropBoxComponent data={key} key={index}  />
                     ))}
                 </div>
             </HeaderActionBlock>

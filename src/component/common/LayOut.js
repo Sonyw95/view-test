@@ -3,11 +3,12 @@ import FooterNavi from "../../view/pageResources/footer/FooterNavi";
 import { Outlet } from "react-router-dom";
 import LeftSideBar from "../../view/pageResources/sidebar/LeftSideBar";
 import avatar from "../../resources/image/avatar/24.jpg";
+import {useState} from "react";
 
 const LayOut = ({isDark, toggleDarkMode, isNormalSide, toggleSide}) => {
 
     {/* 나중에 데이터로 받을 거임 */}
-    const popList = [
+    const [dropDownList, setDropDownList] = useState([
         {
             icon: "icon-notification",
             svg: "#svg-notification",
@@ -16,6 +17,7 @@ const LayOut = ({isDark, toggleDarkMode, isNormalSide, toggleSide}) => {
             place: "header",
             level:"4",
             alert:"alert",
+            drop: ""
         },
         {
             icon: "icon-messages",
@@ -24,7 +26,8 @@ const LayOut = ({isDark, toggleDarkMode, isNormalSide, toggleSide}) => {
             profile: avatar,
             place: "header",
             level:"4",
-            alert:""
+            alert:"",
+            drop: ""
         },
         {
             icon: "icon-settings",
@@ -33,17 +36,17 @@ const LayOut = ({isDark, toggleDarkMode, isNormalSide, toggleSide}) => {
             profile: avatar,
             place: "header",
             level:"4",
-            alert:""
+            alert:"",
+            drop:""
         }
-    ]
-
+    ]);
 
     return(
         <>
-            <Header isDark={isDark} toggleDarkMode={toggleDarkMode} popList={popList}/>
+            <Header isDark={isDark} toggleDarkMode={toggleDarkMode} dropDownList={dropDownList} />
             <LeftSideBar/>
             <Outlet />
-            <FooterNavi popList={popList} />
+            <FooterNavi dropDownList={dropDownList} />
         </>
     )
 }

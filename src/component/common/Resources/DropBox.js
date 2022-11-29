@@ -82,33 +82,31 @@ const DropDownBoxListItem = styled.div`
 
 
 
-const DropBox = (props) => {
+const DropBox = (data) => {
 
 
     return(
-        <DropDownListBlock className={props.data.alert}>
-            <svg className={props.data.icon} >
-                <use href={props.data.svg}/>
+        <DropDownListBlock className={data.data.alert} >
+            <svg className={data.data.icon} >
+                <use href={data.data.svg}/>
             </svg>
-        <DropDownPopBlock>
-            <DropDownBoxHeader>
-                <p className={"box-title"}>{props.data.title}</p>
-                <p className={"box-action"}>전부읽기</p>
-            </DropDownBoxHeader>
+            <DropDownPopBlock>
+                <DropDownBoxHeader>
+                    <p className={"box-title"}>{data.data.title}</p>
+                    <p className={"box-action"}>전부읽기</p>
+                </DropDownBoxHeader>
 
-            <DropDownBoxBlock>
-                <DropDownBoxList>
-                    <DropDownBoxListItem>
-                        <Link to={"/"}>
-                            <HeaderPopAvatar src={props.data.profile} place={props.data.place} level={props.data.level}/>
-                        </Link>
-                    </DropDownBoxListItem>
-                </DropDownBoxList>
-            </DropDownBoxBlock>
+                <DropDownBoxBlock >
+                    <DropDownBoxList>
+                        <DropDownBoxListItem>
+                            <Link to={"/"}>
+                                <HeaderPopAvatar src={data.data.profile} place={data.data.place} level={data.data.level}/>
+                            </Link>
+                        </DropDownBoxListItem>
+                    </DropDownBoxList>
+                </DropDownBoxBlock>
 
-        </DropDownPopBlock>
-
-
+            </DropDownPopBlock>
         </DropDownListBlock>
     )
 
