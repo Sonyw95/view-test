@@ -33,6 +33,12 @@ const DropDownPopBlock = styled.div`
     transition: opacity 0.4s ease, transform 0.4s ease, visibility 0.4s;
     z-index: 999;
     padding-bottom: 60px;
+    
+    &.drop{
+        opacity: 1 !important;
+        visibility:visible !important;
+        transform: translateY(0) !important;
+    }
 `;
 
 const DropDownBoxHeader = styled.div`
@@ -63,11 +69,7 @@ const DropDownBoxBlock = styled.div`
     align-content: flex-start;
     align-items: flex-start;
     
-    .drop{
-        opacity: 1 !important;
-        visibility:visible !important;
-        transform: translateY(0) !important;
-    }
+    
 `;
 const DropDownBoxList = styled.div`
         display: block;
@@ -84,19 +86,21 @@ const DropDownBoxListItem = styled.div`
 
 const DropBox = (data) => {
 
+    const onClickActive = (eventIcon) =>{
+    }
 
     return(
-        <DropDownListBlock className={data.data.alert} >
+        <DropDownListBlock className={data.data.alert} onClick={onClickActive(data.data.icon)} >
             <svg className={data.data.icon} >
                 <use href={data.data.svg}/>
             </svg>
-            <DropDownPopBlock>
+            <DropDownPopBlock className={""}>
                 <DropDownBoxHeader>
                     <p className={"box-title"}>{data.data.title}</p>
                     <p className={"box-action"}>전부읽기</p>
                 </DropDownBoxHeader>
 
-                <DropDownBoxBlock >
+                <DropDownBoxBlock  >
                     <DropDownBoxList>
                         <DropDownBoxListItem>
                             <Link to={"/"}>
