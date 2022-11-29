@@ -7,7 +7,7 @@ import {useState} from "react";
 
 const LayOut = ({isDark, toggleDarkMode, isNormalSide, toggleSide}) => {
 
-    {/* 나중에 데이터로 받을 거임 */}
+    /* 나중에 데이터로 받을 거임 */
     const [dropDownList, setDropDownList] = useState([
         {
             icon: "icon-notification",
@@ -17,7 +17,6 @@ const LayOut = ({isDark, toggleDarkMode, isNormalSide, toggleSide}) => {
             place: "header",
             level:"4",
             alert:"alert",
-            drop: ""
         },
         {
             icon: "icon-messages",
@@ -27,7 +26,6 @@ const LayOut = ({isDark, toggleDarkMode, isNormalSide, toggleSide}) => {
             place: "header",
             level:"4",
             alert:"",
-            drop: ""
         },
         {
             icon: "icon-settings",
@@ -37,7 +35,6 @@ const LayOut = ({isDark, toggleDarkMode, isNormalSide, toggleSide}) => {
             place: "header",
             level:"4",
             alert:"",
-            drop:""
         }
     ]);
 

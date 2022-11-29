@@ -6,23 +6,22 @@ import {Link} from "react-router-dom";
 import {ButtonComponent, DropBoxComponent} from "../../../component/common/IndexComponent";
 import {useRef , useEffect} from "react";
 
-const Header = ({ isDark, toggleDarkMode, dropDownList, handleDropDownActive}) => {
+const Header = ({ isDark, toggleDarkMode, dropDownList }) => {
 
-    const drowDownRef = useRef(null);
+    const dropDownRef = useRef(null);
 
     useEffect( () => {
 
         function handleClickOutSide(event){
-            if(drowDownRef.current && !drowDownRef.current.contains(event.target)){
+            if(dropDownRef.current && !dropDownRef.current.contains(event.target)){
                 console.log("외부 클릭 감지");
             }
-            console.log(event.target);
         }
         document.addEventListener("click", handleClickOutSide);
         return() => {
             document.removeEventListener("click", handleClickOutSide);
         }
-    },[drowDownRef]);
+    },[dropDownRef]);
 
     return (
         <HeaderBlock>
@@ -77,7 +76,7 @@ const Header = ({ isDark, toggleDarkMode, dropDownList, handleDropDownActive}) =
             {/* 우측 드롭박스 메뉴바 */}
             <HeaderActionBlock>
                 {/* 드롭박스 메뉴 모음 */}
-                <div className="dropdown-list"  ref={drowDownRef}>
+                <div className="dropdown-list"  ref={dropDownRef}>
                     {dropDownList.map( (key,index)=>(
                             <DropBoxComponent data={key} key={index}  />
                     ))}

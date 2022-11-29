@@ -1,6 +1,7 @@
 import styled from "styled-components";
 import {Link} from "react-router-dom";
 import {HeaderPopAvatar} from "./UserAvatar";
+import {useState} from "react";
 
 const DropDownListBlock = styled.div`
     position: relative;
@@ -86,15 +87,14 @@ const DropDownBoxListItem = styled.div`
 
 const DropBox = (data) => {
 
-    const onClickActive = (eventIcon) =>{
-    }
+    const [isOpen, setIsOpen] = useState(false);
 
     return(
-        <DropDownListBlock className={data.data.alert} onClick={onClickActive(data.data.icon)} >
+        <DropDownListBlock className={`${data.data.alert} `} onClick={() => setIsOpen(!isOpen)}  >
             <svg className={data.data.icon} >
                 <use href={data.data.svg}/>
             </svg>
-            <DropDownPopBlock className={""}>
+            <DropDownPopBlock className={`${isOpen ? "drop" : ""} `}>
                 <DropDownBoxHeader>
                     <p className={"box-title"}>{data.data.title}</p>
                     <p className={"box-action"}>전부읽기</p>
