@@ -6,4 +6,4 @@ export const ButtonComponent = props => <Button{...props}/>;
 
 export const DropBoxComponent = props => <DropBox data={props.data} key={props.index}/>
 
-export const ToggleSwitchComponent = () => <ToggleSwitch/>
+export const ToggleSwitchComponent = props => <ToggleSwitch {...props}/>

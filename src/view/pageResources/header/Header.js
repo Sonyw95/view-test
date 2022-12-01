@@ -68,7 +68,7 @@ const Header = ({ isDark, toggleDarkMode, dropDownList }) => {
             </HeaderActionBlock>
 
             <HeaderActionBlock>
-                <ToggleSwitchComponent/>
+                <ToggleSwitchComponent onClick={toggleDarkMode}/>
             </HeaderActionBlock>
 
             <HeaderActionBlock>

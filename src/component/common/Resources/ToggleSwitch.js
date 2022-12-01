@@ -16,9 +16,9 @@ const SwitchBlock =styled.div`
     
 `
 
-const ToggleSwitch = () => {
+const ToggleSwitch = props => {
     return (
-        <ToggleBlock>
+        <ToggleBlock {...props}>
             <SwitchBlock>
 
             </SwitchBlock>
