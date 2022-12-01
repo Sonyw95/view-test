@@ -8,22 +8,6 @@ import {useRef , useEffect} from "react";
 
 const Header = ({ isDark, toggleDarkMode, dropDownList }) => {
 
-    const dropDownRef = useRef(null);
-
-    useEffect( () => {
-
-        function handleClickOutSide(event){
-            console.log(event.target);
-            if(dropDownRef.current && !dropDownRef.current.contains(event.target)){
-                console.log("외부 클릭 감지");
-            }
-        }
-        document.addEventListener("click", handleClickOutSide);
-        return() => {
-            document.removeEventListener("click", handleClickOutSide);
-        }
-    },[dropDownRef]);
-
     return (
         <HeaderBlock>
             {/*  좌측 로고 및 타이틀 */}
@@ -77,9 +61,9 @@ const Header = ({ isDark, toggleDarkMode, dropDownList }) => {
             {/* 우측 드롭박스 메뉴바 */}
             <HeaderActionBlock>
                 {/* 드롭박스 메뉴 모음 */}
-                <div className="dropdown-list"  ref={dropDownRef}>
+                <div className="dropdown-list">
                     {dropDownList.map( (key,index)=>(
-                            <DropBoxComponent data={key} key={index}  />
+                            <DropBoxComponent data={key} key={index} />
                     ))}
                 </div>
             </HeaderActionBlock>

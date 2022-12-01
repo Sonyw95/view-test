@@ -5,12 +5,13 @@ export const useSelectClose = (initState) => {
     const [isOpen, setIsOpen] = useState(initState);
     const ref= useRef(null);
 
-    const removeHandler = () =>{
+    const removeHandler = e =>{
+        console.log("RemoveHandler");
         setIsOpen(!isOpen);
     }
     useEffect( () => {
         const onClick = (e) =>{
-            console.log(e.target);
+            console.log("UseEffect");
             if(ref.current !== null && !ref.current.contains(e.target)){
                 setIsOpen(!isOpen);
             }

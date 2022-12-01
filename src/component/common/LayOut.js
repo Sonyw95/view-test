@@ -17,6 +17,7 @@ const LayOut = ({isDark, toggleDarkMode, isNormalSide, toggleSide}) => {
             place: "header",
             level:"4",
             alert:"alert",
+            drop:""
         },
         {
             icon: "icon-messages",
@@ -26,6 +27,7 @@ const LayOut = ({isDark, toggleDarkMode, isNormalSide, toggleSide}) => {
             place: "header",
             level:"4",
             alert:"",
+            drop:""
         },
         {
             icon: "icon-settings",
@@ -35,6 +37,7 @@ const LayOut = ({isDark, toggleDarkMode, isNormalSide, toggleSide}) => {
             place: "header",
             level:"4",
             alert:"",
+            drop:""
         }
     ]);
 

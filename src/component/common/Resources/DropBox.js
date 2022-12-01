@@ -1,7 +1,7 @@
 import styled from "styled-components";
 import {Link} from "react-router-dom";
 import {HeaderPopAvatar} from "./UserAvatar";
-import {useState, useEffect, useRef} from "react";
+import {useSelectClose} from "../../../hooks/useSelectClose";
 
 const DropDownListBlock = styled.div`
     position: relative;
@@ -17,6 +17,13 @@ const DropDownListBlock = styled.div`
         display: flex;
         padding: 0 18px;
         position: relative;
+    }
+    
+    svg{
+        height: inherit;
+        use{
+            transform: translate(0, 38%);
+        }
     }
 `;
 
@@ -85,21 +92,18 @@ const DropDownBoxListItem = styled.div`
 
 
 
-const DropBox = (data) => {
+const DropBox = (props) => {
 
-    const [isOpen, setIsOpen] = useState(false);
-
-    const dropDownRef = useRef(null);
-
+    const [isOpen, hasRef, HandlerRemove ] = useSelectClose(false);
 
     return(
-        <DropDownListBlock className={`${data.data.alert} `} onClick={() => setIsOpen(!isOpen)}  ref={dropDownRef}  >
-            <svg className={data.data.icon} >
-                <use href={data.data.svg}/>
+        <DropDownListBlock className={`${props.data.alert} `}  ref={hasRef} >
+            <svg className={props.data.icon} onClick={HandlerRemove}>
+                <use href={props.data.svg}/>
             </svg>
-            <DropDownPopBlock className={`${isOpen ? "drop" : ""} `}>
+            <DropDownPopBlock className={`${isOpen ? "drop" : ""} `} >
                 <DropDownBoxHeader>
-                    <p className={"box-title"}>{data.data.title}</p>
+                    <p className={"box-title"}>{props.data.title}</p>
                     <p className={"box-action"}>전부읽기</p>
                 </DropDownBoxHeader>
 
@@ -107,7 +111,7 @@ const DropBox = (data) => {
                     <DropDownBoxList>
                         <DropDownBoxListItem>
                             <Link to={"/"}>
-                                <HeaderPopAvatar src={data.data.profile} place={data.data.place} level={data.data.level}/>
+                                <HeaderPopAvatar src={props.data.profile} place={props.data.place} level={props.data.level}/>
                             </Link>
                         </DropDownBoxListItem>
                     </DropDownBoxList>
