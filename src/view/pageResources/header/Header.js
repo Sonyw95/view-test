@@ -4,7 +4,6 @@ import darkLogo from "../../../resources/image/logo/main_logo-dark.png";
 import ProgressBar from "../../../component/common/Resources/ProgressBar";
 import {Link} from "react-router-dom";
 import {ButtonComponent, DropBoxComponent} from "../../../component/common/IndexComponent";
-import {useRef , useEffect} from "react";
 
 const Header = ({ isDark, toggleDarkMode, dropDownList }) => {
 

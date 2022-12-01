@@ -3,12 +3,11 @@ import FooterNavi from "../../view/pageResources/footer/FooterNavi";
 import { Outlet } from "react-router-dom";
 import LeftSideBar from "../../view/pageResources/sidebar/LeftSideBar";
 import avatar from "../../resources/image/avatar/24.jpg";
-import {useState} from "react";
 
 const LayOut = ({isDark, toggleDarkMode, isNormalSide, toggleSide}) => {
 
     /* 나중에 데이터로 받을 거임 */
-    const [dropDownList, setDropDownList] = useState([
+    const dropDownList =[
         {
             icon: "icon-notification",
             svg: "#svg-notification",
@@ -39,7 +38,7 @@ const LayOut = ({isDark, toggleDarkMode, isNormalSide, toggleSide}) => {
             alert:"",
             drop:""
         }
-    ]);
+    ];
 
     return(
         <>

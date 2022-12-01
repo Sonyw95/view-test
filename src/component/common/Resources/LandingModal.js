@@ -79,7 +79,7 @@ const LandingModal = ( { onClose} ) =>{
 
                     <div className="social-links">
                         <div className="social-link div-kakao">
-                            <img className="img-kakao" src={kakao}/>
+                            <img className="img-kakao" src={kakao} alt={"Kakao"}/>
                         </div>
 
                         <div className="social-link div-facebook" >

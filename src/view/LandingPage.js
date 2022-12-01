@@ -45,7 +45,7 @@ const LandingPage = ({isDark}) => {
             <LandingInfoBlock>
                 <Link to="/">
                     <div className="logo">
-                        <img className="logo-icon" src={isDark? darkLogo:logo}/>
+                        <img className="logo-icon" src={isDark? darkLogo:logo} alt={"darkOrLight"}/>
                     </div>
 
                     <h2 className="pre-title">

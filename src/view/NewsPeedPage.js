@@ -1,14 +1,11 @@
 import React, {useEffect, useRef, useState} from "react";
 import {ContentBlock, ContentGrid, SectionBannerBlock} from "./pageResources/Style/NewsPeedStyle";
 
-import ProgressBar from "../component/common/Resources/ProgressBar";
 import Button from "../component/common/Resources/Button";
 
 import newsPeedBanner from "../resources/image/banner/newsfeed-icon.png";
-import qs from "../resources/image/quest/openq-s.png";
 
 import moment from "momnet";
-import {Link} from "react-router-dom";
 import avatar from "../resources/image/avatar/24.jpg";
 import {ContentAvatar} from "../component/common/Resources/UserAvatar";
 import {UseCircleChart} from "../hooks/useCircleChart";

@@ -53,7 +53,7 @@ const LoginPage = () => {
                     <div className="social-links">
                         <Link to="/">
                             <div className="social-link div-kakao">
-                                <img className="img-kakao" src={kakao}/>
+                                <img className="img-kakao" src={kakao} alt={"kakao"}/>
                             </div>
                         </Link>
 
