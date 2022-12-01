@@ -10,7 +10,8 @@ import qs from "../resources/image/quest/openq-s.png";
 import moment from "momnet";
 import {Link} from "react-router-dom";
 import avatar from "../resources/image/avatar/24.jpg";
-import {ContentAvatar, UserAvatar} from "../component/common/Resources/UserAvatar";
+import {ContentAvatar} from "../component/common/Resources/UserAvatar";
+import {UseCircleChart} from "../hooks/useCircleChart";
 
 
 const NewsPeedPage = ({isNormalSide}) => {
@@ -93,6 +94,11 @@ const NewsPeedPage = ({isNormalSide}) => {
             <ContentGrid>
                 <div className={"grid-column"}>
                     <div className={"widget-box"}>
+                        <p className="widget-box-title">이달의 차트</p>
+                        <UseCircleChart/>
+                    </div>
+                    {/*
+                    <div className={"widget-box"}>
                         <div className={"widget-box-setting"}>
                             <svg className="widget-setting ">
                                 <use href="#svg-more-dots"/>
@@ -127,6 +133,7 @@ const NewsPeedPage = ({isNormalSide}) => {
                         </div>
                         <Link to="/" className="widget-box-button button small white">See all Quests!</Link>
                     </div>
+                    */}
                 </div>
 
                 <div className={"grid-column"}>
