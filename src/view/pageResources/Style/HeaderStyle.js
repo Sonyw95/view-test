@@ -330,6 +330,4 @@ export const SearchBarBlock =styled.div`
             
         }
     }
-        
-    
 `;

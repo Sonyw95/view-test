@@ -167,7 +167,7 @@ const NewsPeedPage = ({isNormalSide}) => {
                                     </div>
                                 </div>
                                 <div className={"quick-post-footer-action"}>
-                                    <Button className={"quick-post-button"}>작성</Button>
+                                    <Button className={"quick-post-button"} style={ {margin: '0'}}>작성</Button>
                                 </div>
                             </div>
                         </div>
@@ -217,7 +217,7 @@ const NewsPeedPage = ({isNormalSide}) => {
 
                                     {days.map ( (day, idx)=>{
                                         return(
-                                            <p className={"calendar-week-day"} key={idx}>{day}</p>
+                                            <p className={`calendar-week-day ${day}`}  key={idx}>{day}</p>
                                         )
                                     })}
                                 </div>

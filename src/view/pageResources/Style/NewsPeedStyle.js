@@ -194,6 +194,7 @@ export const ContentGrid = styled.div`
                         justify-content: space-between;
                         display: flex;
                         
+                       
                         .calendar-week-day{
                             padding: 16px 0;
                             font-size: .75rem;
@@ -201,6 +202,14 @@ export const ContentGrid = styled.div`
                             color: #8f91ac;
                             font-weight: 500;
                             text-align: center;
+                            
+                            &:nth-child(1){
+                                color: red;
+                            }
+                            &:nth-child(7){
+                                color: blue;
+                            }
+                        
                             
                             &.selected{
                                 color:#fff;

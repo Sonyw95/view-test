@@ -1,10 +1,6 @@
-// install (please make sure versions match peerDependencies)
-// yarn add @nivo/core @nivo/calendar
-// install (please make sure versions match peerDependencies)
-// yarn add @nivo/core @nivo/pie
 import { ResponsivePie } from '@nivo/pie'
 
-export const UseCircleChart = ({ data /* see data tab */ }) => {
+export const UseCircleChart = ({ data }) => {
     return(
         <div style={{ width: '100%', height: '300px' }}>
             <ResponsivePie
@@ -13,13 +9,11 @@ export const UseCircleChart = ({ data /* see data tab */ }) => {
                             "id": "Java",
                             "label": "Java",
                             "value": 396,
-                            "color": "hsl(244, 70%, 50%)"
                         },
                         {
                             "id": "etc",
                             "label": "etc",
                             "value": 252,
-                            "color": "hsl(300, 70%, 50%)"
                         },
                     ]}
                 margin={{ top: 40, bottom: 80 }}
