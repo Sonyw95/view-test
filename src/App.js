@@ -1,6 +1,6 @@
 import { Route, Routes } from 'react-router-dom';
 import LandingPage from "./view/LandingPage";
-import NewsPeedPage from "./view/NewsPeedPage";
+import NewsPeedPage from "./view/pageResources/newsPeed/NewsPeedPage";
 import {createGlobalStyle, ThemeProvider} from "styled-components";
 import {useState} from "react";
 import LayOut from "./component/common/LayOut";

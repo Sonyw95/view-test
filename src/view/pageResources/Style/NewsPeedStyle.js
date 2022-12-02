@@ -151,6 +151,10 @@ export const ContentGrid = styled.div`
             .widget-box-content{
                 margin-top: 36px;
                 
+                > div:nth-child(1){
+                    margin-bottom: 2rem;
+                }
+                
                 .widget-box-list{
                     margin-bottom: 20px;
                     
@@ -232,7 +236,7 @@ export const ContentGrid = styled.div`
                         flex-direction: column;
                         align-items: center;
                         
-                        &:after{
+                        &:nth-child(1):after{
                             content: "";
                             width: 1px;
                             height: 40px;

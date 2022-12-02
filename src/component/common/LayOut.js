@@ -33,7 +33,7 @@ const LayOut = ({isDark, toggleDarkMode, isNormalSide, toggleSide}) => {
             svg: "#svg-settings",
             title: "안내",
             profile: avatar,
-            place: "header",
+            place: "setting",
             level:"4",
             alert:"",
             drop:""

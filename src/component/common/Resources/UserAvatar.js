@@ -15,7 +15,7 @@ const AvatarLevelBlock = styled.div`
     width: 18px;
     height: 20px;
     top: 60%;
-    left: 8%;
+    
     display: flex;
     justify-content: center;
     align-items: center;
@@ -24,6 +24,13 @@ const AvatarLevelBlock = styled.div`
     border: 2px solid white;
     background-color: rgb(255,130,0);
     z-index: 4;
+    
+    ${ (props) => props.place === 'header' && `
+        left: 8%;
+    `}
+    ${ (props) => props.place === 'setting' && `
+        left: 16%;
+    `}
 }
 `;
 
@@ -39,7 +46,7 @@ const AvatarLevel = styled.div`
 export const HeaderPopAvatar = (props) => {
     return (
         <>
-            <AvatarBlock src={props.src} place={props.place}/>
+            <AvatarBlock src={props.src} />
             <AvatarLevelBlock place={props.place}>
                 <AvatarLevel place={props.place}>
                     {props.level}
