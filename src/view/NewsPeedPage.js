@@ -9,7 +9,7 @@ import moment from "momnet";
 import avatar from "../resources/image/avatar/24.jpg";
 import {ContentAvatar} from "../component/common/Resources/UserAvatar";
 import {UseCircleChart} from "../hooks/useCircleChart";
-
+import likeReaction from "../resources/image/reaction/like.png";
 
 const NewsPeedPage = ({isNormalSide}) => {
 
@@ -18,7 +18,7 @@ const NewsPeedPage = ({isNormalSide}) => {
     const ref = useRef(null);
 
     const days = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
-    const date = moment();
+    const [date, setDate] = useState(moment());
     const [nowLength, setLength]= useState(1000);
 
     const style ={
@@ -80,6 +80,14 @@ const NewsPeedPage = ({isNormalSide}) => {
         }
     });
 
+    const onClickData = (type) => {
+        switch(type){
+            case "left":
+                return setDate(moment().subtract(1, 'month'));
+            default :
+                return setDate(moment().add(1, 'month'));
+        }
+    }
     return(
         <ContentBlock style={style} ref={ref} >
             <SectionBannerBlock >
@@ -201,12 +209,42 @@ const NewsPeedPage = ({isNormalSide}) => {
                 </div>
 
                 <div className={"grid-column"}>
-                    <div className={"widget-box"}>
+                    <div className={"widget-box stats"}>
                         <div className={"widget-box-setting"}>
                             <svg className="widget-setting left ">
                                 <use href="#svg-small-arrow"/>
                             </svg>
                             <svg className="widget-setting ">
+                                <use href="#svg-small-arrow"/>
+                            </svg>
+                        </div>
+                        <p className="widget-box-title">받은 리액션</p>
+                        <div className={"widget-box-content"}>
+                            <div className={"reaction-box"}>
+                                <div className={"reaction-stats"}>
+                                    <img src={likeReaction} className={"reaction-image"}/>
+                                    <p className={"reaction-stat-title"}>99,999</p>
+                                    <p className={"reaction-stat-text"}>좋아요</p>
+                                </div>
+                            </div>
+                            <div className={"reaction-box"}>
+                                <div className={"reaction-stats"}>
+                                    <img src={likeReaction} className={"reaction-image"}/>
+                                    <p className={"reaction-stat-title"}>99,999</p>
+                                    <p className={"reaction-stat-text"}>좋아요</p>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+
+
+                    <div className={"widget-box"}>
+                        <div className={"widget-box-setting"}>
+                            <svg className="widget-setting left" onClick={() => onClickData("left")  }>
+                                <use href="#svg-small-arrow"/>
+                            </svg>
+                            <svg className="widget-setting " onClick={() => onClickData("right")  }>
                                 <use href="#svg-small-arrow"/>
                             </svg>
                         </div>
@@ -227,6 +265,9 @@ const NewsPeedPage = ({isNormalSide}) => {
                             </div>
                         </div>
                     </div>
+
+
+
                 </div>
 
             </ContentGrid>

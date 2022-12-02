@@ -62,7 +62,7 @@ const Header = ({ isDark, toggleDarkMode, dropDownList }) => {
                 {/* 드롭박스 메뉴 모음 */}
                 <div className="dropdown-list">
                     {dropDownList.map( (key,index)=>(
-                            <DropBoxComponent data={key} key={index} />
+                        <DropBoxComponent data={key} key={index} />
                     ))}
                 </div>
             </HeaderActionBlock>

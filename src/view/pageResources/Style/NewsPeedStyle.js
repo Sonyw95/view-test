@@ -220,7 +220,47 @@ export const ContentGrid = styled.div`
                             }
                         }
                     }
-                }             
+                }  
+                .reaction-box{
+                    display: flex;
+                    justify-content: center;
+                    
+                    .reaction-stats{
+                        width: 114px;
+                        position: relative;
+                        display: flex;
+                        flex-direction: column;
+                        align-items: center;
+                        
+                        &:after{
+                            content: "";
+                            width: 1px;
+                            height: 40px;
+                            background-color: #eaeaf5;
+                            position: absolute;
+                            top: 32px;
+                            right: 0;
+                        }
+                        
+                        .reaction-image{
+                            width: 40px;
+                            height: 40px;
+                            
+                        }
+                        .reaction-stat-title{
+                            margin-top: 16px;
+                            font-size: 1.05rem;
+                            font-weight: 700;
+                        }
+                        .reaction-stat-text{
+                            margin-top: 8px;
+                            color: #adafca;
+                            font-size: .75rem;
+                            font-weight: 700;
+                            text-transform: uppercase;
+                        }
+                    }
+                }           
             }
             .widget-box-button{
                 width: 100%;
