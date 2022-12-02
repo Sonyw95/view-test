@@ -9,14 +9,27 @@ import avatar from "../../../resources/image/avatar/24.jpg";
 import {ContentAvatar} from "../../../component/common/Resources/UserAvatar";
 import LeftGrid from "./LeftGrid";
 import RightGird from "./RightGird";
+import {Link} from "react-router-dom";
+
+import like from "../../../resources/image/reaction/like.png";
 
 const NewsPeedPage = ({isNormalSide}) => {
 
     const [resizeWidth, setResizeWidth] = useState('274');
-
     const ref = useRef(null);
-
     const [nowLength, setLength]= useState(1000);
+
+    const postList = [
+        {
+            id:"1"
+        },
+        {
+            id:"2"
+        },
+        {
+            id:"3"
+        }
+    ]
 
     const style ={
         transform: `translate(${resizeWidth}px, 0px)`,
@@ -56,10 +69,12 @@ const NewsPeedPage = ({isNormalSide}) => {
             </SectionBannerBlock>
 
             <ContentGrid>
+                {/* 왼쪽 차트 그리드 */}
                 <div className={"grid-column"}>
                     <LeftGrid/>
                 </div>
 
+                {/* 글작성 글목록 그리드*/}
                 <div className={"grid-column"}>
                     <div className={"quick-post"}>
                         <div className={"quick-post-header"}>
@@ -100,33 +115,103 @@ const NewsPeedPage = ({isNormalSide}) => {
                         </div>
                     </div>
 
-                    <div className={"widget-box"}>
-                        <div className={"widget-box-setting"}>
-                            <svg className="widget-setting ">
-                                <use href="#svg-more-dots"/>
-                            </svg>
-                        </div>
-                        <div className="widget-box-title">
-                            <ContentAvatar src={avatar} level={"4"}/>
-                        </div>
+                    {
+                        postList.map( (list) => (
+                            <div className={"widget-box post"} key={list.id}>
+                                <div className={"widget-box-setting"}>
+                                    <svg className="widget-setting ">
+                                        <use href="#svg-more-dots"/>
+                                    </svg>
+                                </div>
+                                <div className="widget-box-title avtar">
+                                    <ContentAvatar src={avatar} level={"4"} place={"newsPeed"}/>
+                                    <div className="widget-box-contents-title">
+                                        <Link path={"/"} className={"bold"}>LABIT</Link> uploaded post
+                                        <p className="widget-box-contents-text ">2분전 게시</p>
+                                    </div>
 
-                        <div className={"widget-box-content"}>
-                            <div className={"widget-box-list"}>
-                                <div className={"widget-box-item-info"}>
+                                </div>
+
+                                <div className={"widget-box-content"}>
+                                    <p className={"widget-box-content-text"}>
+                                        이글은 똥글 뻘글 테스트글이다 알겠냐? 사진은 무료png사진 개꿀띠
+                                    </p>
+                                    <div className="contents-actions">
+                                        <div className={"content-reaction"}>
+                                            <div className={"reaction-line"}>
+                                                <div className={"reaction-line-list"}>
+                                                    <div className={"reaction-item"}>
+                                                        <img src={like} alt={"like"}/>
+                                                    </div>
+                                                    <div className={"reaction-item"}>
+                                                        <img src={like} alt={"like"}/>
+                                                    </div>
+                                                    <div className={"reaction-item"}>
+                                                        <img src={like} alt={"like"}/>
+                                                    </div>
+                                                </div>
+                                                <p className={"reaction-line-text"}>
+                                                    99
+                                                </p>
+                                            </div>
+
+                                            <div className={"reaction-line"}>
+                                                <div className={"reaction-line-list"}>
+                                                    <div className={"reaction-item"}>
+                                                        <img src={like} alt={"like"}/>
+                                                    </div>
+                                                    <div className={"reaction-item"}>
+                                                        <img src={like} alt={"like"}/>
+                                                    </div>
+                                                    <div className={"reaction-item"}>
+                                                        <img src={like} alt={"like"}/>
+                                                    </div>
+                                                </div>
+                                                <p className={"reaction-line-text"}>
+                                                    22명 반응함
+                                                </p>
+                                            </div>
+
+                                        </div>
+                                        <div className={"content-reaction"}>
+                                            <div className={"reaction-line"}>
+                                                <Link path={"/"} className={"reaction-line-link"}>15 Comments</Link>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div className={"post-action"}>
+
+                                        <div className={"post-option-wrap"}>
+                                            <div className={"post-option"}>
+                                                <svg className="post-option-icon icon-thumbs-up">
+                                                    <use href="#svg-thumbs-up"/>
+                                                </svg>
+                                                <p className={"post-option-text"}> 반응하기 </p>
+                                            </div>
+                                        </div>
+
+                                        <div className={"post-option-wrap"}>
+                                            <div className={"post-option"}>
+                                                <svg className="post-option-icon icon-comment">
+                                                    <use href="#svg-comment"/>
+                                                </svg>
+                                                <p className={"post-option-text"}> 댓글달기 </p>
+                                            </div>
+                                        </div>
+
+                                    </div>
+
                                 </div>
                             </div>
-                        </div>
+                        ))
+                    }
 
-                        <div className={"widget-box-content"}>
-                            <div className={"widget-box-list"}>
-                                <div className={"widget-box-item-info"}>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+
 
                 </div>
 
+                {/* 우측 달력 및 부가 그리드 */}
                 <div className={"grid-column"}>
                     <RightGird/>
                 </div>

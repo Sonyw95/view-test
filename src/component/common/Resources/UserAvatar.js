@@ -1,7 +1,7 @@
 import styled from "styled-components";
 
 const AvatarBlock= styled.div`
-    position: absolute;
+    ${(props) => props.content ? `position: relative;` : `position: absolute;`}
     top: 0;
     left: 0;
     width: 40px;
@@ -9,6 +9,8 @@ const AvatarBlock= styled.div`
     border-radius: 20px;
     background: url(${ props => props.src});
     background-size: 40px
+    
+    
 `;
 
 const AvatarLevelBlock = styled.div`
@@ -31,6 +33,9 @@ const AvatarLevelBlock = styled.div`
     ${ (props) => props.place === 'setting' && `
         left: 16%;
     `}
+    ${ (props) => props.place === 'newsPeed' && `
+        left: 58px;
+    `}
 }
 `;
 
@@ -48,7 +53,7 @@ export const HeaderPopAvatar = (props) => {
         <>
             <AvatarBlock src={props.src} />
             <AvatarLevelBlock place={props.place}>
-                <AvatarLevel place={props.place}>
+                <AvatarLevel >
                     {props.level}
                 </AvatarLevel>
             </AvatarLevelBlock>
@@ -61,9 +66,9 @@ export const HeaderPopAvatar = (props) => {
 export const ContentAvatar = (props) => {
     return(
         <>
-            <AvatarBlock src={props.src} place={props.place}/>
+            <AvatarBlock src={props.src} content={"true"} />
             <AvatarLevelBlock place={props.place}>
-                <AvatarLevel place={props.place} >
+                <AvatarLevel  >
                     {props.level}
                 </AvatarLevel>
             </AvatarLevelBlock>

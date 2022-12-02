@@ -14,6 +14,8 @@ export const HeaderBlock = styled.div`
     left: 0;
     z-index: 10000;
     
+    box-shadow: 0px 0px 10px 10px rgb(94 92 154 / 30%);
+    
     @media screen and (max-width: 680px){
         height: 60px;
     }

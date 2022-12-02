@@ -1,29 +1,48 @@
 import styled from "styled-components";
+import {useState} from "react";
 
-const ToggleBlock = styled.div`
-    transform: scale(1.5); 
-    display: block;
-    width: 2.5rem;
-    background: #CCC;
-    height: 1rem;
-    border-radius: 40px;
-    background: linear-gradient(to bottom, #9e9e9e 30%, #f4f4f4);
-    box-shadow: 0 2px 0 0 #fff, 0 -2px 0 0 #969494;
-    position: relative;
-`
+const ToggleBtn = styled.button`
+  width: 60px;
+  height: 25px;
+  border-radius: 30px;
+  border: none;
+  cursor: pointer;
+  background-color: ${(props) => props.isDark ? "#c6631d" : "#828080"};
+  box-shadow: inset 0 0 30px 0 rgb(0 0 0 / 30%);
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: all 0.5s ease-in-out;
+  
+    @media screen and (max-width: 1365px) {
+        display: none;
+    }
+`;
+const Circle = styled.div`
+  background:  linear-gradient(to top, #9e9e9e 20%, #f4f4f4);
+  box-shadow: 0 3px 5px 0 rgb(0 0 0 / 50%);
+  width: 30px;
+  height: 30px;
+  border-radius: 50px;
+  position: absolute;
+  left: 1%;
+  transition: all 0.5s ease-in-out;
+  ${(props) =>  props.isDark &&
+    `
+      transform: translate(30px, 0);
+      transition: all 0.5s ease-in-out;
+    `}
+`;
 
-const SwitchBlock =styled.div`
-    
-`
 
 const ToggleSwitch = props => {
     return (
-        <ToggleBlock {...props}>
-            <SwitchBlock>
-
-            </SwitchBlock>
-
-        </ToggleBlock>
+        <>
+            <ToggleBtn onClick={props.toggleDarkMode} isDark={props.isDark}>
+                <Circle isDark={props.isDark} />
+            </ToggleBtn>
+        </>
     )
 }
 

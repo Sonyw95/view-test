@@ -106,7 +106,7 @@ export const ContentGrid = styled.div`
         display: grid;
         grid-template-columns: 100%;
         grid-gap: 16px;
-        min-width: 0;
+        min-width: 0; 
         
         .widget-box{
             padding: 32px 28px;
@@ -116,7 +116,69 @@ export const ContentGrid = styled.div`
             box-shadow: 0 0 40px 0 rgba(94,92,154, .06);
             position: relative;
             
+             &.post{
+                padding: 20px 0 0 0;
+             }
             
+            .post-action{
+                display:flex;
+                align-items: center;
+                justify-content: space-between;
+                height: 65px;
+                padding: 0 28px;
+                border-top: 1px solid #eaeaf5;
+                border-bottom-left-radius: 12px;
+                border-bottom-right-radius: 12px;
+                background-color: #fcfcfd;
+                
+                .post-option-wrap{
+                    position: relative;
+                    .post-option{
+                        display:flex;
+                        align-items: center;
+                        justify-content: center;
+                        width: 160px;
+                        height: 44px;
+                        border-radius: 12px;
+                        cursor: pointer;
+                        transition: box-shadow .2s ease-in-out,background-color .2s ease-in-out;
+                        
+                        &:hover{
+                            background-color:#fff;
+                            box-shadow: 3px 5px 20px 0 rgb(94 92 154 / 10%);
+                            color: #3e3f5e;
+                        }
+                        &:hover > .post-option-text{
+                            color: #3e3f5e;
+                        }
+                        &:hover > .post-option-text{
+                            color: #3e3f5e;
+                        }
+                        &:hover > svg{
+                            fill: #23d2e2;
+                            opacity: 1;
+                        }
+                        
+                        .post-option-text{
+                            color: #adafca;
+                            font-size: .75rem;
+                            font-weight: 7000;
+                            transition: color .2s ease-in-out;
+                        }
+                        
+                        .post-option-icon{
+                            position: relative;
+                            top: -2px;
+                            margin-right: 16px;
+                            fill: #adafca;
+                            opacity: .6;
+                            transition: fill .2s ease-in-out,opacity .2s ease-in-out;
+                        }
+                    
+                    
+                    }
+                }
+            }
             .widget-box-setting{
                 position: absolute;
                 top: 22px;
@@ -139,20 +201,107 @@ export const ContentGrid = styled.div`
                     left: -35%;
                 }      
             }
-            
+               
             .widget-box-title{
                 position: absolute;
                 top: 22px;
                 width: 90%;
                 font-size: 0.9rem;
-                font-weight: 700;
+                font-weight: 700;  
+            }
+            .widget-box-title.avtar {
+                min-height: 44px;
+                padding: 0 0 0 32px;
             }
             
+            .widget-box-contents-title {
+                width: 90%;
+                padding: 2px 0 0 52px;
+                min-height: 44px;
+                position: absolute;
+                top:0;
+                color: #3e3f5e;
+                font-size: .875rem;
+                font-weight: 500;
+                line-height: 1.4285714286em;
+   
+                .bold{
+                    color: #3e3f5e;
+                    font-weight: 700;
+                }
+            }
+            .widget-box-contents-text{
+                margin-top:4px;
+                font-size: .75rem;
+                position:relative;
+                line-height: 1.4285714286em;
+            }
             .widget-box-content{
                 margin-top: 36px;
                 
                 > div:nth-child(1){
                     margin-bottom: 2rem;
+                }
+                .contents-actions{
+                    margin-top: 28px;
+                    padding : 0 28px;
+                    border-top: 1px solid #eaeaf5;
+                    align-items: center;
+                    height: 52px;
+                    justify-content: space-between;
+                    display: flex;
+                    
+                    .content-reaction{
+                        display: flex;
+                        flex-wrap: wrap;
+                    }
+                    .reaction-line{
+                        display:flex;
+                        align-items: center;
+                        
+                        .reaction-line-text{
+                            font-size: .75rem;
+                            font-weight: 600;
+                            margin-left: 10px;
+                        }
+                        .reaction-line-link{
+                            font-size: .75rem;
+                            font-weight: 700;
+                            cursor: pointer;
+                            transition: color .2s ease-in-out;
+                        }
+                    }
+                    .reaction-line+.reaction-line{
+                        margin-left:30px;
+                    }
+                    .reaction-line-list{
+                        display: flex;
+                        justify-content: flex-end;
+                        flex-direction: row-reverse;
+                    }
+                    .reaction-item{
+                        position:relative;
+                        display:flex;
+                        justify-content: center;
+                        align-items: center;
+                        width: 24px;
+                        height: 24px;
+                        border-radius: 50%;
+                        background-color: #fff;
+                        margin-left: -6px;
+                        
+                        img{
+                            width: 20px;
+                             height: 20px;
+                        }
+                    }
+                    
+                }
+                .widget-box-content-text{
+                    font-size: .875rem;
+                    line-height: 1.7142857143em;
+                    font-weight: 500;
+                    padding: 20px 0 0 28px;
                 }
                 
                 .widget-box-list{

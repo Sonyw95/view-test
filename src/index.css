@@ -120,7 +120,7 @@ a, h1, h2, h3, h4, h5, h6, p {
   line-height:1em;
 }
 
-.icon-grid,.icon-camera,.icon-insert-tag, .icon-status, .icon-join-group, .icon-leave-group, .icon-login, .icon-magnifying-glass, .icon-messages, .icon-notification, .icon-plus, .icon-shopping-bag, .icon-settings, .icon-messages, .icon-settings, .icon-messages, icon-notification {
+.icon-grid,.icon-camera,.icon-insert-tag, .icon-status, .icon-join-group, .icon-leave-group, .icon-login, .icon-magnifying-glass, .icon-messages, .icon-notification, .icon-plus, .icon-shopping-bag, .icon-settings, .icon-messages, .icon-settings, .icon-messages, icon-notification, .icon-thumbs-up, .icon-comment{
   fill: #f0f0f0;
   width: 20px;
   height: 20px;
