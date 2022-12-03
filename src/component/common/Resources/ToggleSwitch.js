@@ -1,5 +1,4 @@
 import styled from "styled-components";
-import {useState} from "react";
 
 const ToggleBtn = styled.button`
   width: 60px;

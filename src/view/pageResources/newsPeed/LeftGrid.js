@@ -5,7 +5,7 @@ const LeftGrid = () => {
 
         <>
             <div className={"widget-box"}>
-                <p className="widget-box-title">이달의 차트</p>
+                <p className="widget-box-title">이달의 포스팅차트</p>
                 <UseCircleChart/>
             </div>
             {/*

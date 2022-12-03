@@ -120,6 +120,28 @@ export const ContentGrid = styled.div`
                 padding: 20px 0 0 0;
              }
             
+            .widget-box-tooltip{
+                white-space: nowrap;
+                position: absolute;
+                z-index: 99999;
+                top: -32px;
+                left: 50%;
+                margin-left: -47.5px;
+                opacity: 0;
+                visibility: hidden;
+                transform: translate(0px, 10px);
+                transition: all 0.3s ease-in-out 0s;
+                
+                p{
+                    padding: 0 12px;
+                    border-radius: 200px;
+                    background-color: #3e3f5e;
+                    color: #fff;
+                    font-size: .75rem;
+                    font-weight: 700;
+                    line-height: 24px;
+                }
+            }
             .post-action{
                 display:flex;
                 align-items: center;
@@ -190,10 +212,21 @@ export const ContentGrid = styled.div`
                 height: 9%;
                 cursor: pointer;
             }
+            .widget-setting > .widget-box-tooltip {
+                    visibility: visible;
+                    opacity: 1;
+                }
             .widget-setting{
                 fill: #adafca;
                 opacity: .4;
                 transition: opacity .2s ease-in-out,fill .2s ease-in-out;         
+                
+                &:hover{
+                    fill: rgb(255,90,0);
+                    opacity:1;
+                }
+                
+                
                 
                 &.left{
                     transform: scaleX(-1);
@@ -207,7 +240,12 @@ export const ContentGrid = styled.div`
                 top: 22px;
                 width: 90%;
                 font-size: 0.9rem;
-                font-weight: 700;  
+                font-weight: 700; 
+                
+                &.date{
+                    padding:10px 2px 0px 2px;
+                } 
+                
             }
             .widget-box-title.avtar {
                 min-height: 44px;
